@@ -29,8 +29,10 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		354418C01EA8093B0094EB72 /* shader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = shader.h; sourceTree = "<group>"; };
+		354418C21EA80B870094EB72 /* Simple.ver */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = Simple.ver; path = Shaders/Simple.ver; sourceTree = "<group>"; };
+		354418C31EA80BB70094EB72 /* Simple.frag */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; name = Simple.frag; path = Shaders/Simple.frag; sourceTree = "<group>"; };
 		354502D11EA5634600F3B587 /* libglfw3.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libglfw3.a; path = ../../../../../../../usr/local/lib/libglfw3.a; sourceTree = "<group>"; };
-		355DCF1B1EA6BCC60029CD24 /* Simple.shader */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = Simple.shader; path = Shaders/Vertex/Simple.shader; sourceTree = "<group>"; };
 		35A0C1DD1EA3859E006C34AF /* OpenGL_01 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = OpenGL_01; sourceTree = BUILT_PRODUCTS_DIR; };
 		35A0C1E01EA3859E006C34AF /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		35A0C1E81EA3864A006C34AF /* libglfw.3.2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libglfw.3.2.dylib; path = ../../../../../../../usr/local/Cellar/glfw/3.2.1/lib/libglfw.3.2.dylib; sourceTree = "<group>"; };
@@ -61,25 +63,10 @@
 		355DCF181EA6BC770029CD24 /* Shaders */ = {
 			isa = PBXGroup;
 			children = (
-				355DCF1A1EA6BC870029CD24 /* Fragment */,
-				355DCF191EA6BC810029CD24 /* Vertex */,
+				354418C21EA80B870094EB72 /* Simple.ver */,
+				354418C31EA80BB70094EB72 /* Simple.frag */,
 			);
 			name = Shaders;
-			sourceTree = "<group>";
-		};
-		355DCF191EA6BC810029CD24 /* Vertex */ = {
-			isa = PBXGroup;
-			children = (
-				355DCF1B1EA6BCC60029CD24 /* Simple.shader */,
-			);
-			name = Vertex;
-			sourceTree = "<group>";
-		};
-		355DCF1A1EA6BC870029CD24 /* Fragment */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Fragment;
 			sourceTree = "<group>";
 		};
 		35A0C1D41EA3859E006C34AF = {
@@ -104,6 +91,7 @@
 			children = (
 				355DCF181EA6BC770029CD24 /* Shaders */,
 				35A0C1E01EA3859E006C34AF /* main.cpp */,
+				354418C01EA8093B0094EB72 /* shader.h */,
 			);
 			path = OpenGL_01;
 			sourceTree = "<group>";
