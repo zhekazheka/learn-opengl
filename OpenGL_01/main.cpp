@@ -12,19 +12,26 @@
 #include <iostream>
 #include <GLFW/glfw3.h>
 
+#include <math.h>
+
 // Shaders
-const GLchar* vertexShaderSource = "#version 330 core\n"
+const GLchar* vertexShaderSource =
+"#version 330 core\n"
 "layout (location = 0) in vec3 position;\n"
+"out vec4 vertexColor; // Specify a color output to the fragment shader\n"
 "void main()\n"
 "{\n"
 "gl_Position = vec4(position.x, position.y, position.z, 1.0);\n"
+"vertexColor = vec4(0.5f, 0.0f, 0.0f, 1.0f); // Set the output variable to a dark-red color\n"
 "}\0";
 
-const GLchar* fragmentShaderSource = "#version 330 core\n"
+const GLchar* fragmentShaderSource =
+"#version 330 core\n"
 "out vec4 color;\n"
+"uniform vec4 ourColor; // We set this variable in the OpenGL code.\n"
 "void main()\n"
 "{\n"
-"color = vec4(1.0f, 0.5f, 0.2f, 1.0f);\n"
+"color = ourColor;\n"
 "}\n\0";
 
 void key_callback(GLFWwindow* window, int key, int scancode, int action, int mode)
@@ -113,11 +120,15 @@ void setRectangleState()
         0.5f,  0.5f, 0.0f,  // Top Right
         0.5f, -0.5f, 0.0f,  // Bottom Right
         -0.5f, -0.5f, 0.0f,  // Bottom Left
-        -0.5f,  0.5f, 0.0f   // Top Left
+        -0.5f,  0.5f, 0.0f,   // Top Left
+        -0.8f, -0.9f, 0.0f,
+        0.0f, -0.9f, 0.0f,
+        0.0f, -0.2f, 0.0f
     };
     GLuint indices[] = {  // Note that we start from 0!
         0, 1, 3,   // First Triangle
         2, 3, 0,    // Second Triangle
+        4, 5, 6
     };
     
     glGenVertexArrays(1, &VAO);
@@ -182,6 +193,10 @@ int main(int argc, const char * argv[])
     
     glPolygonMode(GL_FRONT_AND_BACK, GL_FILL);
     
+    GLint nrAttributes;
+    glGetIntegerv(GL_MAX_VERTEX_ATTRIBS, &nrAttributes);
+    std::cout << "Maximum nr of vertex attributes supported: " << nrAttributes << std::endl;
+    
     // game loop
     while(!glfwWindowShouldClose(window))
     {
@@ -190,10 +205,15 @@ int main(int argc, const char * argv[])
         glClearColor(0.7f, 0.3f, 0.3f, 1.0f);
         glClear(GL_COLOR_BUFFER_BIT);
         
+        GLfloat timeValue = glfwGetTime();
+        GLfloat greenValue = (sin(timeValue) / 2) + 0.5;
+        GLfloat redValue = (sin(timeValue + 23) / 2) + 0.5;
+        GLint vertexColorLocation = glGetUniformLocation(shaderProgram, "ourColor");
         glUseProgram(shaderProgram);
+        glUniform4f(vertexColorLocation, redValue, greenValue, 0.0f, 1.0f);
         glBindVertexArray(VAO);
 //        glDrawArrays(GL_TRIANGLES, 0, 3);
-        glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);
+        glDrawElements(GL_TRIANGLES, 9, GL_UNSIGNED_INT, 0);
         glBindVertexArray(0);
         
         glfwSwapBuffers(window);
