@@ -14,6 +14,7 @@
 		35A0C1EF1EA55D9E006C34AF /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35A0C1EE1EA55D9E006C34AF /* Cocoa.framework */; };
 		35A0C1F11EA55DA9006C34AF /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35A0C1F01EA55DA9006C34AF /* IOKit.framework */; };
 		35A0C1F31EA55DB0006C34AF /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35A0C1F21EA55DB0006C34AF /* CoreVideo.framework */; };
+		35FDB0BE1EA934CE00A51757 /* libSOIL.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 35FDB0BD1EA934CE00A51757 /* libSOIL.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -29,7 +30,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		354418C01EA8093B0094EB72 /* shader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = shader.h; sourceTree = "<group>"; };
+		354418C01EA8093B0094EB72 /* shader-loader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "shader-loader.h"; sourceTree = "<group>"; };
 		354418C21EA80B870094EB72 /* Simple.ver */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = Simple.ver; path = Shaders/Simple.ver; sourceTree = "<group>"; };
 		354418C31EA80BB70094EB72 /* Simple.frag */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; name = Simple.frag; path = Shaders/Simple.frag; sourceTree = "<group>"; };
 		354502D11EA5634600F3B587 /* libglfw3.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libglfw3.a; path = ../../../../../../../usr/local/lib/libglfw3.a; sourceTree = "<group>"; };
@@ -41,6 +42,10 @@
 		35A0C1EE1EA55D9E006C34AF /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		35A0C1F01EA55DA9006C34AF /* IOKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOKit.framework; path = System/Library/Frameworks/IOKit.framework; sourceTree = SDKROOT; };
 		35A0C1F21EA55DB0006C34AF /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
+		35FDB0BC1EA929FC00A51757 /* test_texture.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = test_texture.JPG; sourceTree = "<group>"; };
+		35FDB0BD1EA934CE00A51757 /* libSOIL.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libSOIL.a; path = ../../../../../../../usr/local/lib/libSOIL.a; sourceTree = "<group>"; };
+		35FDB0BF1EA935AF00A51757 /* container.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = container.jpg; sourceTree = "<group>"; };
+		35FDB0C01EA935AF00A51757 /* wall.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = wall.jpg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -48,6 +53,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				35FDB0BE1EA934CE00A51757 /* libSOIL.a in Frameworks */,
 				35A0C1F31EA55DB0006C34AF /* CoreVideo.framework in Frameworks */,
 				35A0C1F11EA55DA9006C34AF /* IOKit.framework in Frameworks */,
 				35A0C1EF1EA55D9E006C34AF /* Cocoa.framework in Frameworks */,
@@ -89,9 +95,10 @@
 		35A0C1DF1EA3859E006C34AF /* OpenGL_01 */ = {
 			isa = PBXGroup;
 			children = (
+				35FDB0BA1EA929FC00A51757 /* Resources */,
 				355DCF181EA6BC770029CD24 /* Shaders */,
 				35A0C1E01EA3859E006C34AF /* main.cpp */,
-				354418C01EA8093B0094EB72 /* shader.h */,
+				354418C01EA8093B0094EB72 /* shader-loader.h */,
 			);
 			path = OpenGL_01;
 			sourceTree = "<group>";
@@ -99,6 +106,7 @@
 		35A0C1E71EA3864A006C34AF /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				35FDB0BD1EA934CE00A51757 /* libSOIL.a */,
 				354502D11EA5634600F3B587 /* libglfw3.a */,
 				35A0C1F21EA55DB0006C34AF /* CoreVideo.framework */,
 				35A0C1F01EA55DA9006C34AF /* IOKit.framework */,
@@ -108,6 +116,24 @@
 				35A0C1E81EA3864A006C34AF /* libglfw.3.2.dylib */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		35FDB0BA1EA929FC00A51757 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				35FDB0BB1EA929FC00A51757 /* Textures */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		35FDB0BB1EA929FC00A51757 /* Textures */ = {
+			isa = PBXGroup;
+			children = (
+				35FDB0BF1EA935AF00A51757 /* container.jpg */,
+				35FDB0C01EA935AF00A51757 /* wall.jpg */,
+				35FDB0BC1EA929FC00A51757 /* test_texture.JPG */,
+			);
+			path = Textures;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

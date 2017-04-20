@@ -16,11 +16,11 @@
 
 #include <GL/glew.h>; // Include glew to get all the required OpenGL headers
 
-class Shader
+class ShaderLoader
 {
 public:
     // Constructor reads and builds the shader
-    Shader(const GLchar* vertexPath, const GLchar* fragmentPath)
+    ShaderLoader(const GLchar* vertexPath, const GLchar* fragmentPath)
     {
         // 1. Retrieve the vertex/fragment source code from filePath
         std::string vertexCode;
