@@ -13,6 +13,9 @@
 #include <GLFW/glfw3.h>
 
 #include <SOIL/SOIL.h>
+#include <glm/glm.hpp>
+#include <glm/gtc/matrix_transform.hpp>
+#include <glm/gtc/type_ptr.hpp>
 
 #include <math.h>
 
@@ -98,6 +101,15 @@ void setRectangleState()
     glBindBuffer(GL_ARRAY_BUFFER, 0); // Note that this is allowed, the call to glVertexAttribPointer registered VBO as the currently bound vertex buffer object so afterwards we can safely unbind
     
     glBindVertexArray(0); // Unbind VAO (it's always a good thing to unbind any buffer/array to prevent strange bugs), remember: do NOT unbind the EBO, keep it bound to this VAO
+}
+
+void testMatrix()
+{
+    glm::vec4 vec(1.0f, 0.0f, 0.0f, 1.0f);
+    glm::mat4 trans;
+    trans = glm::translate(trans, glm::vec3(1.0f, 1.0f, 0.0f));
+    vec = trans * vec;
+    std::cout << "Translation result is: " << vec.x << vec.y << vec.z << std::endl;
 }
 
 int main(int argc, const char * argv[])
@@ -194,6 +206,10 @@ int main(int argc, const char * argv[])
     SOIL_free_image_data(image);
     glBindTexture(GL_TEXTURE_2D, 0);
     
+    glm::mat4 trans;
+//    trans = glm::rotate(trans, 23.0f, glm::vec3(0.0f, 0.0f, 1.0f));
+//    trans = glm::scale(trans, glm::vec3(0.5f, 0.5f, 0.5f));
+    
     // game loop
     while(!glfwWindowShouldClose(window))
     {
@@ -204,10 +220,18 @@ int main(int argc, const char * argv[])
         
         GLfloat timeValue = glfwGetTime();
         GLfloat positionOffsetX = sin(timeValue) / 2;
-        GLint offsetXLocation = glGetUniformLocation(simpleShader.Program, "offsetX");
+//        GLint offsetXLocation = glGetUniformLocation(simpleShader.Program, "offsetX");
         
         // Set uniform variable in the vertex shader
-        glUniform1f(offsetXLocation, positionOffsetX);
+//        glUniform1f(offsetXLocation, positionOffsetX);
+        
+        trans = glm::mat4();
+        trans = glm::translate(trans, glm::vec3(positionOffsetX, -positionOffsetX, 0.0f));
+        trans = glm::rotate(trans, timeValue * glm::radians(50.0f), glm::vec3(0.0f, 0.0f, 1.0f));
+        trans = glm::scale(trans, glm::vec3(0.5f, 0.5f, 0.5f));
+        
+        GLuint transformLoc = glGetUniformLocation(simpleShader.Program, "transform");
+        glUniformMatrix4fv(transformLoc, 1, GL_FALSE, glm::value_ptr(trans));
         
         // Bind Texture
         glActiveTexture(GL_TEXTURE0);
