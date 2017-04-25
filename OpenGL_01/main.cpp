@@ -21,12 +21,26 @@
 
 #include "shader-loader.h"
 
+float xAxis, yAxis = -3.0f;
+
 void key_callback(GLFWwindow* window, int key, int scancode, int action, int mode)
 {
     // When a user presses the escape key, we set the WindowShouldClose property to true,
     // closing the application
     if(key == GLFW_KEY_ESCAPE && action == GLFW_PRESS)
         glfwSetWindowShouldClose(window, GL_TRUE);
+    
+    if(key == GLFW_KEY_LEFT)
+        xAxis -= 1.0f;
+    
+    if(key == GLFW_KEY_RIGHT)
+        xAxis += 1.0f;
+    
+    if(key == GLFW_KEY_UP)
+        yAxis += 0.3;
+    
+    if(key == GLFW_KEY_DOWN)
+        yAxis -= 0.3;
 }
 
 GLuint VAO, VBO, EBO;
@@ -103,6 +117,75 @@ void setRectangleState()
     glBindVertexArray(0); // Unbind VAO (it's always a good thing to unbind any buffer/array to prevent strange bugs), remember: do NOT unbind the EBO, keep it bound to this VAO
 }
 
+void setCubeState()
+{
+    GLfloat vertices[] =
+    {
+        -0.5f, -0.5f, -0.5f,  0.0f, 0.0f,
+        0.5f, -0.5f, -0.5f,  1.0f, 0.0f,
+        0.5f,  0.5f, -0.5f,  1.0f, 1.0f,
+        0.5f,  0.5f, -0.5f,  1.0f, 1.0f,
+        -0.5f,  0.5f, -0.5f,  0.0f, 1.0f,
+        -0.5f, -0.5f, -0.5f,  0.0f, 0.0f,
+        
+        -0.5f, -0.5f,  0.5f,  0.0f, 0.0f,
+        0.5f, -0.5f,  0.5f,  1.0f, 0.0f,
+        0.5f,  0.5f,  0.5f,  1.0f, 1.0f,
+        0.5f,  0.5f,  0.5f,  1.0f, 1.0f,
+        -0.5f,  0.5f,  0.5f,  0.0f, 1.0f,
+        -0.5f, -0.5f,  0.5f,  0.0f, 0.0f,
+        
+        -0.5f,  0.5f,  0.5f,  1.0f, 0.0f,
+        -0.5f,  0.5f, -0.5f,  1.0f, 1.0f,
+        -0.5f, -0.5f, -0.5f,  0.0f, 1.0f,
+        -0.5f, -0.5f, -0.5f,  0.0f, 1.0f,
+        -0.5f, -0.5f,  0.5f,  0.0f, 0.0f,
+        -0.5f,  0.5f,  0.5f,  1.0f, 0.0f,
+        
+        0.5f,  0.5f,  0.5f,  1.0f, 0.0f,
+        0.5f,  0.5f, -0.5f,  1.0f, 1.0f,
+        0.5f, -0.5f, -0.5f,  0.0f, 1.0f,
+        0.5f, -0.5f, -0.5f,  0.0f, 1.0f,
+        0.5f, -0.5f,  0.5f,  0.0f, 0.0f,
+        0.5f,  0.5f,  0.5f,  1.0f, 0.0f,
+        
+        -0.5f, -0.5f, -0.5f,  0.0f, 1.0f,
+        0.5f, -0.5f, -0.5f,  1.0f, 1.0f,
+        0.5f, -0.5f,  0.5f,  1.0f, 0.0f,
+        0.5f, -0.5f,  0.5f,  1.0f, 0.0f,
+        -0.5f, -0.5f,  0.5f,  0.0f, 0.0f,
+        -0.5f, -0.5f, -0.5f,  0.0f, 1.0f,
+        
+        -0.5f,  0.5f, -0.5f,  0.0f, 1.0f,
+        0.5f,  0.5f, -0.5f,  1.0f, 1.0f,
+        0.5f,  0.5f,  0.5f,  1.0f, 0.0f,
+        0.5f,  0.5f,  0.5f,  1.0f, 0.0f,
+        -0.5f,  0.5f,  0.5f,  0.0f, 0.0f,
+        -0.5f,  0.5f, -0.5f,  0.0f, 1.0f
+    };
+    
+    glGenVertexArrays(1, &VAO);
+    glGenBuffers(1, &VBO);
+    
+    // Bind the Vertex Array Object first, then bind and set vertex buffer(s) and attribute pointer(s).
+    glBindVertexArray(VAO);
+    
+    glBindBuffer(GL_ARRAY_BUFFER, VBO);
+    glBufferData(GL_ARRAY_BUFFER, sizeof(vertices), vertices, GL_STATIC_DRAW);
+    
+    // Position attribute
+    glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 5 * sizeof(GLfloat), (GLvoid*)0);
+    glEnableVertexAttribArray(0);
+    
+    // Texture attribute
+    glVertexAttribPointer(2, 2, GL_FLOAT, GL_FALSE, 5 * sizeof(GLfloat), (GLvoid*)(3 * sizeof(GLfloat)));
+    glEnableVertexAttribArray(2);
+    
+    glBindBuffer(GL_ARRAY_BUFFER, 0); // Note that this is allowed, the call to glVertexAttribPointer registered VBO as the currently bound vertex buffer object so afterwards we can safely unbind
+    
+    glBindVertexArray(0); // Unbind VAO (it's always a good thing to unbind any buffer/array to prevent strange bugs), remember: do NOT unbind the EBO, keep it bound to this VAO
+}
+
 void testMatrix()
 {
     glm::vec4 vec(1.0f, 0.0f, 0.0f, 1.0f);
@@ -144,15 +227,16 @@ int main(int argc, const char * argv[])
     }
     
     // set viewport
-    int width, height;
-    glfwGetFramebufferSize(window, &width, &height);
-    glViewport(0, 0, width, height);
+    int screenWidth, screenHeight;
+    glfwGetFramebufferSize(window, &screenWidth, &screenHeight);
+    glViewport(0, 0, screenWidth, screenHeight);
     
     ShaderLoader simpleShader("/Users/zhekazheka/Documents/HandMade/Projects/OpenGL/OpenGL_01/OpenGL_01/Shaders/Simple.ver",
                         "/Users/zhekazheka/Documents/HandMade/Projects/OpenGL/OpenGL_01/OpenGL_01/Shaders/Simple.frag");
     
 //    setTriangleState();
-    setRectangleState();
+//    setRectangleState();
+    setCubeState();
     
     glPolygonMode(GL_FRONT_AND_BACK, GL_FILL);
     
@@ -161,6 +245,7 @@ int main(int argc, const char * argv[])
     std::cout << "Maximum nr of vertex attributes supported: " << nrAttributes << std::endl;
     
     
+    int width, height;
     unsigned char* image = SOIL_load_image("/Users/zhekazheka/Documents/HandMade/Projects/OpenGL/OpenGL_01/OpenGL_01/Resources/Textures/container.jpg",
                                            &width, &height, 0, SOIL_LOAD_RGB);
     
@@ -206,9 +291,22 @@ int main(int argc, const char * argv[])
     SOIL_free_image_data(image);
     glBindTexture(GL_TEXTURE_2D, 0);
     
-    glm::mat4 trans;
-//    trans = glm::rotate(trans, 23.0f, glm::vec3(0.0f, 0.0f, 1.0f));
-//    trans = glm::scale(trans, glm::vec3(0.5f, 0.5f, 0.5f));
+    glm::vec3 cubePositions[] = {
+        glm::vec3( 0.0f,  0.0f,  0.0f),
+        glm::vec3( 2.0f,  5.0f, -15.0f),
+        glm::vec3(-1.5f, -2.2f, -2.5f),
+        glm::vec3(-3.8f, -2.0f, -12.3f),
+        glm::vec3( 2.4f, -0.4f, -3.5f),
+        glm::vec3(-1.7f,  3.0f, -7.5f),
+        glm::vec3( 1.3f, -2.0f, -2.5f),
+        glm::vec3( 1.5f,  2.0f, -2.5f),
+        glm::vec3( 1.5f,  0.2f, -1.5f),
+        glm::vec3(-1.3f,  1.0f, -1.5f)  
+    };
+    
+    glEnable(GL_DEPTH_TEST);
+    
+    GLfloat positionOffsetX = 0;
     
     // game loop
     while(!glfwWindowShouldClose(window))
@@ -216,22 +314,26 @@ int main(int argc, const char * argv[])
         glfwPollEvents();
         
         glClearColor(0.7f, 0.3f, 0.3f, 1.0f);
-        glClear(GL_COLOR_BUFFER_BIT);
+        glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
         
         GLfloat timeValue = glfwGetTime();
-        GLfloat positionOffsetX = sin(timeValue) / 2;
-//        GLint offsetXLocation = glGetUniformLocation(simpleShader.Program, "offsetX");
+        positionOffsetX += (sin(timeValue + 0.5f)) / 2;
         
-        // Set uniform variable in the vertex shader
-//        glUniform1f(offsetXLocation, positionOffsetX);
+        glm::mat4 view;
+        // Note that we're translating the scene in the reverse direction of where we want to move
+        view = glm::translate(view, glm::vec3(0.0f, 0.0f, yAxis));
+        view = glm::rotate(view, glm::radians(xAxis), glm::vec3(0.0f, 1.0f, 0.0f));
         
-        trans = glm::mat4();
-        trans = glm::translate(trans, glm::vec3(positionOffsetX, -positionOffsetX, 0.0f));
-        trans = glm::rotate(trans, timeValue * glm::radians(50.0f), glm::vec3(0.0f, 0.0f, 1.0f));
-        trans = glm::scale(trans, glm::vec3(0.5f, 0.5f, 0.5f));
+        glm::mat4 projection;
+        projection = glm::perspective(glm::radians(90.0f), (float)screenWidth / screenHeight, 0.1f, 100.0f);
         
-        GLuint transformLoc = glGetUniformLocation(simpleShader.Program, "transform");
-        glUniformMatrix4fv(transformLoc, 1, GL_FALSE, glm::value_ptr(trans));
+        GLint modelLoc = glGetUniformLocation(simpleShader.Program, "model");
+        
+        GLint viewLoc = glGetUniformLocation(simpleShader.Program, "view");
+        glUniformMatrix4fv(viewLoc, 1, GL_FALSE, glm::value_ptr(view));
+        
+        GLint projectionLoc = glGetUniformLocation(simpleShader.Program, "projection");
+        glUniformMatrix4fv(projectionLoc, 1, GL_FALSE, glm::value_ptr(projection));
         
         // Bind Texture
         glActiveTexture(GL_TEXTURE0);
@@ -246,7 +348,21 @@ int main(int argc, const char * argv[])
         
         // Draw container
         glBindVertexArray(VAO);
-        glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);
+        
+        for(GLuint i = 0; i < 10; ++i)
+        {
+            glm::mat4 model;
+            model = glm::translate(model, cubePositions[i]);
+            GLfloat angle = 20.0f * i;
+            double randAxis = ((double)std::rand() / (RAND_MAX)) + 1;
+            model = glm::rotate(model, (GLfloat)timeValue * glm::radians(angle), glm::vec3(randAxis, randAxis, randAxis));
+            glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+            
+            glDrawArrays(GL_TRIANGLES, 0, 36);
+        }
+
+//        glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);
+//        glDrawArrays(GL_TRIANGLES, 0, 36);
         glBindVertexArray(0);
         
         glfwSwapBuffers(window);
