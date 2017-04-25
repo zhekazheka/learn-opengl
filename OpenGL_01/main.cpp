@@ -30,17 +30,19 @@ void key_callback(GLFWwindow* window, int key, int scancode, int action, int mod
     if(key == GLFW_KEY_ESCAPE && action == GLFW_PRESS)
         glfwSetWindowShouldClose(window, GL_TRUE);
     
+    float speed = 50.0f;
+    
     if(key == GLFW_KEY_LEFT)
-        xAxis -= 1.0f;
+        xAxis -= speed * 0.16f;
     
     if(key == GLFW_KEY_RIGHT)
-        xAxis += 1.0f;
+        xAxis += speed * 0.16f;
     
     if(key == GLFW_KEY_UP)
-        yAxis += 0.3;
+        yAxis += speed * 0.16f;
     
     if(key == GLFW_KEY_DOWN)
-        yAxis -= 0.3;
+        yAxis -= speed * 0.16f;
 }
 
 GLuint VAO, VBO, EBO;
@@ -321,8 +323,9 @@ int main(int argc, const char * argv[])
         
         glm::mat4 view;
         // Note that we're translating the scene in the reverse direction of where we want to move
-        view = glm::translate(view, glm::vec3(0.0f, 0.0f, yAxis));
+        view = glm::translate(view, glm::vec3(0.0f, 0.0f, -3.0f));
         view = glm::rotate(view, glm::radians(xAxis), glm::vec3(0.0f, 1.0f, 0.0f));
+        view = glm::rotate(view, glm::radians(yAxis), glm::vec3(1.0f, 0.0f, 0.0f));
         
         glm::mat4 projection;
         projection = glm::perspective(glm::radians(90.0f), (float)screenWidth / screenHeight, 0.1f, 100.0f);
