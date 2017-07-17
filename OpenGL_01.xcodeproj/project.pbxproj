@@ -7,14 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		354502D21EA5634600F3B587 /* libglfw3.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 354502D11EA5634600F3B587 /* libglfw3.a */; };
 		35A0C1E11EA3859E006C34AF /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 35A0C1E01EA3859E006C34AF /* main.cpp */; };
 		35A0C1EB1EA3E5AF006C34AF /* libGLEW.2.0.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 35A0C1EA1EA3E5AF006C34AF /* libGLEW.2.0.0.dylib */; };
 		35A0C1ED1EA3E601006C34AF /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35A0C1EC1EA3E601006C34AF /* OpenGL.framework */; };
 		35A0C1EF1EA55D9E006C34AF /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35A0C1EE1EA55D9E006C34AF /* Cocoa.framework */; };
 		35A0C1F11EA55DA9006C34AF /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35A0C1F01EA55DA9006C34AF /* IOKit.framework */; };
 		35A0C1F31EA55DB0006C34AF /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35A0C1F21EA55DB0006C34AF /* CoreVideo.framework */; };
-		35FDB0BE1EA934CE00A51757 /* libSOIL.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 35FDB0BD1EA934CE00A51757 /* libSOIL.a */; };
+		84845B081F1D40260073978C /* libSOIL.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 84845AF01F1D40130073978C /* libSOIL.a */; };
+		84845B091F1D41450073978C /* libglfw.3.2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 35A0C1E81EA3864A006C34AF /* libglfw.3.2.dylib */; };
+		84845B1B1F1D44DF0073978C /* image_DXT.c in Sources */ = {isa = PBXBuildFile; fileRef = 84845B121F1D44DF0073978C /* image_DXT.c */; };
+		84845B1C1F1D44DF0073978C /* image_helper.c in Sources */ = {isa = PBXBuildFile; fileRef = 84845B141F1D44DF0073978C /* image_helper.c */; };
+		84845B1D1F1D44DF0073978C /* SOIL.c in Sources */ = {isa = PBXBuildFile; fileRef = 84845B161F1D44DF0073978C /* SOIL.c */; };
+		84845B1E1F1D44DF0073978C /* stb_image_aug.c in Sources */ = {isa = PBXBuildFile; fileRef = 84845B171F1D44DF0073978C /* stb_image_aug.c */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -46,6 +50,17 @@
 		35FDB0BD1EA934CE00A51757 /* libSOIL.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libSOIL.a; path = ../../../../../../../usr/local/lib/libSOIL.a; sourceTree = "<group>"; };
 		35FDB0BF1EA935AF00A51757 /* container.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = container.jpg; sourceTree = "<group>"; };
 		35FDB0C01EA935AF00A51757 /* wall.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = wall.jpg; sourceTree = "<group>"; };
+		84845AF01F1D40130073978C /* libSOIL.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libSOIL.a; sourceTree = "<group>"; };
+		84845AFA1F1D40130073978C /* SOIL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SOIL.h; sourceTree = "<group>"; };
+		84845B121F1D44DF0073978C /* image_DXT.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = image_DXT.c; sourceTree = "<group>"; };
+		84845B131F1D44DF0073978C /* image_DXT.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = image_DXT.h; sourceTree = "<group>"; };
+		84845B141F1D44DF0073978C /* image_helper.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = image_helper.c; sourceTree = "<group>"; };
+		84845B151F1D44DF0073978C /* image_helper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = image_helper.h; sourceTree = "<group>"; };
+		84845B161F1D44DF0073978C /* SOIL.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = SOIL.c; sourceTree = "<group>"; };
+		84845B171F1D44DF0073978C /* stb_image_aug.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = stb_image_aug.c; sourceTree = "<group>"; };
+		84845B181F1D44DF0073978C /* stb_image_aug.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = stb_image_aug.h; sourceTree = "<group>"; };
+		84845B191F1D44DF0073978C /* stbi_DDS_aug_c.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = stbi_DDS_aug_c.h; sourceTree = "<group>"; };
+		84845B1A1F1D44DF0073978C /* stbi_DDS_aug.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = stbi_DDS_aug.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,12 +68,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				35FDB0BE1EA934CE00A51757 /* libSOIL.a in Frameworks */,
+				84845B091F1D41450073978C /* libglfw.3.2.dylib in Frameworks */,
+				84845B081F1D40260073978C /* libSOIL.a in Frameworks */,
 				35A0C1F31EA55DB0006C34AF /* CoreVideo.framework in Frameworks */,
 				35A0C1F11EA55DA9006C34AF /* IOKit.framework in Frameworks */,
 				35A0C1EF1EA55D9E006C34AF /* Cocoa.framework in Frameworks */,
 				35A0C1ED1EA3E601006C34AF /* OpenGL.framework in Frameworks */,
-				354502D21EA5634600F3B587 /* libglfw3.a in Frameworks */,
 				35A0C1EB1EA3E5AF006C34AF /* libGLEW.2.0.0.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -95,6 +110,7 @@
 		35A0C1DF1EA3859E006C34AF /* OpenGL_01 */ = {
 			isa = PBXGroup;
 			children = (
+				84845AED1F1D40130073978C /* Libraries */,
 				35FDB0BA1EA929FC00A51757 /* Resources */,
 				355DCF181EA6BC770029CD24 /* Shaders */,
 				35A0C1E01EA3859E006C34AF /* main.cpp */,
@@ -134,6 +150,48 @@
 				35FDB0BC1EA929FC00A51757 /* test_texture.JPG */,
 			);
 			path = Textures;
+			sourceTree = "<group>";
+		};
+		84845AED1F1D40130073978C /* Libraries */ = {
+			isa = PBXGroup;
+			children = (
+				84845AEE1F1D40130073978C /* SOIL */,
+			);
+			path = Libraries;
+			sourceTree = "<group>";
+		};
+		84845AEE1F1D40130073978C /* SOIL */ = {
+			isa = PBXGroup;
+			children = (
+				84845AEF1F1D40130073978C /* lib */,
+				84845AF11F1D40130073978C /* src */,
+			);
+			path = SOIL;
+			sourceTree = "<group>";
+		};
+		84845AEF1F1D40130073978C /* lib */ = {
+			isa = PBXGroup;
+			children = (
+				84845AF01F1D40130073978C /* libSOIL.a */,
+			);
+			path = lib;
+			sourceTree = "<group>";
+		};
+		84845AF11F1D40130073978C /* src */ = {
+			isa = PBXGroup;
+			children = (
+				84845B121F1D44DF0073978C /* image_DXT.c */,
+				84845B131F1D44DF0073978C /* image_DXT.h */,
+				84845B141F1D44DF0073978C /* image_helper.c */,
+				84845B151F1D44DF0073978C /* image_helper.h */,
+				84845B161F1D44DF0073978C /* SOIL.c */,
+				84845B171F1D44DF0073978C /* stb_image_aug.c */,
+				84845B181F1D44DF0073978C /* stb_image_aug.h */,
+				84845B191F1D44DF0073978C /* stbi_DDS_aug_c.h */,
+				84845B1A1F1D44DF0073978C /* stbi_DDS_aug.h */,
+				84845AFA1F1D40130073978C /* SOIL.h */,
+			);
+			path = src;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -193,6 +251,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84845B1C1F1D44DF0073978C /* image_helper.c in Sources */,
+				84845B1E1F1D44DF0073978C /* stb_image_aug.c in Sources */,
+				84845B1B1F1D44DF0073978C /* image_DXT.c in Sources */,
+				84845B1D1F1D44DF0073978C /* SOIL.c in Sources */,
 				35A0C1E11EA3859E006C34AF /* main.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -295,11 +357,15 @@
 				HEADER_SEARCH_PATHS = (
 					/usr/local/include,
 					/usr/local/Cellar/glew/2.0.0/include,
+					OpenGL_01/Libraries/SOIL/src,
 				);
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					/usr/local/lib/,
 					/usr/local/Cellar/glew/2.0.0/lib,
+					"$(PROJECT_DIR)/OpenGL_01/Libraries",
+					"$(PROJECT_DIR)/OpenGL_01/Libraries/SOIL/lib",
+					/usr/local/Cellar/glfw/3.2.1/lib,
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -311,11 +377,15 @@
 				HEADER_SEARCH_PATHS = (
 					/usr/local/include,
 					/usr/local/Cellar/glew/2.0.0/include,
+					OpenGL_01/Libraries/SOIL/src,
 				);
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					/usr/local/lib/,
 					/usr/local/Cellar/glew/2.0.0/lib,
+					"$(PROJECT_DIR)/OpenGL_01/Libraries",
+					"$(PROJECT_DIR)/OpenGL_01/Libraries/SOIL/lib",
+					/usr/local/Cellar/glfw/3.2.1/lib,
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
