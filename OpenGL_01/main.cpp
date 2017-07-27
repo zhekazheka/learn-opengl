@@ -12,7 +12,7 @@
 #include <iostream>
 #include <GLFW/glfw3.h>
 
-#include <SOIL/SOIL.h>
+#include <SOIL.h>
 #include <glm/glm.hpp>
 #include <glm/gtc/matrix_transform.hpp>
 #include <glm/gtc/type_ptr.hpp>
@@ -289,8 +289,8 @@ int main(int argc, const char * argv[])
     glfwGetFramebufferSize(window, &screenWidth, &screenHeight);
     glViewport(0, 0, screenWidth, screenHeight);
     
-    ShaderLoader simpleShader("/Users/zhekazheka/Documents/HandMade/Projects/OpenGL/OpenGL_01/OpenGL_01/Shaders/Simple.ver",
-                        "/Users/zhekazheka/Documents/HandMade/Projects/OpenGL/OpenGL_01/OpenGL_01/Shaders/Simple.frag");
+    ShaderLoader simpleShader("OpenGL_01/Shaders/Simple.ver",
+                        "OpenGL_01/Shaders/Simple.frag");
     
 //    setTriangleState();
 //    setRectangleState();
@@ -304,7 +304,7 @@ int main(int argc, const char * argv[])
     
     
     int width, height;
-    unsigned char* image = SOIL_load_image("/Users/zhekazheka/Documents/HandMade/Projects/OpenGL/OpenGL_01/OpenGL_01/Resources/Textures/container.jpg",
+    unsigned char* image = SOIL_load_image("OpenGL_01/Resources/Textures/container.jpg",
                                            &width, &height, 0, SOIL_LOAD_RGB);
     
     GLuint texture1, texture2;
@@ -329,7 +329,7 @@ int main(int argc, const char * argv[])
     glBindTexture(GL_TEXTURE_2D, 0);
     
     
-    image = SOIL_load_image("/Users/zhekazheka/Documents/HandMade/Projects/OpenGL/OpenGL_01/OpenGL_01/Resources/Textures/wall.jpg",
+    image = SOIL_load_image("OpenGL_01/Resources/Textures/wall.jpg",
                             &width, &height, 0, SOIL_LOAD_RGB);
     
     // ====================
