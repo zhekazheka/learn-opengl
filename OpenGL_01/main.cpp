@@ -19,6 +19,8 @@
 
 #include <math.h>
 
+#include <unistd.h>
+
 #include "shader-loader.h"
 #include "camera.h"
 
@@ -251,6 +253,9 @@ void testMatrix()
 
 int main(int argc, const char * argv[])
 {
+    char * dir = getcwd(NULL, 0); // Platform-dependent, see reference link below
+    printf("Current dir: %s", dir);
+    
     // glfw initialization
     glfwInit();
     glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
@@ -289,8 +294,12 @@ int main(int argc, const char * argv[])
     glfwGetFramebufferSize(window, &screenWidth, &screenHeight);
     glViewport(0, 0, screenWidth, screenHeight);
     
-    ShaderLoader simpleShader("OpenGL_01/Shaders/Simple.ver",
-                        "OpenGL_01/Shaders/Simple.frag");
+    ShaderLoader simpleShader("../../../OpenGL_01/Shaders/Simple.ver",
+                              "../../../OpenGL_01/Shaders/Simple.frag");
+
+//    ShaderLoader simpleShader("/Users/zhekazheka/Documents/HandMade/Projects/OpenGL/OpenGL_01/OpenGL_01/Shaders/Simple.ver",
+//                              "/Users/zhekazheka/Documents/HandMade/Projects/OpenGL/OpenGL_01/OpenGL_01/Shaders/Simple.frag");
+    
     
 //    setTriangleState();
 //    setRectangleState();
@@ -304,7 +313,7 @@ int main(int argc, const char * argv[])
     
     
     int width, height;
-    unsigned char* image = SOIL_load_image("OpenGL_01/Resources/Textures/container.jpg",
+    unsigned char* image = SOIL_load_image("../../../OpenGL_01/Resources/Textures/container.jpg",
                                            &width, &height, 0, SOIL_LOAD_RGB);
     
     GLuint texture1, texture2;
@@ -329,7 +338,7 @@ int main(int argc, const char * argv[])
     glBindTexture(GL_TEXTURE_2D, 0);
     
     
-    image = SOIL_load_image("OpenGL_01/Resources/Textures/wall.jpg",
+    image = SOIL_load_image("../../../OpenGL_01/Resources/Textures/wall.jpg",
                             &width, &height, 0, SOIL_LOAD_RGB);
     
     // ====================
