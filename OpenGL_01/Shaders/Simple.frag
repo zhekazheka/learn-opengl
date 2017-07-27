@@ -10,6 +10,7 @@ uniform sampler2D ourTexture2;
 
 void main()
 {
-    color = mix(texture(ourTexture1, TexCoord), texture(ourTexture2, TexCoord), sinValue);
+//    color = vec4(ourColor.r, ourColor.g, ourColor.b, 1.0f);
+    color = vec4(ourColor.r, ourColor.g, ourColor.b, 1.0f) * mix(texture(ourTexture1, TexCoord), texture(ourTexture2, TexCoord), sinValue);
     //* vec4(ourColor.r + sinValue * 0.23, ourColor.g + (1.0f - sinValue), ourColor.b + sinValue * 0.43, 1.0f);
 }
