@@ -20,30 +20,82 @@
 #include <math.h>
 
 #include "shader-loader.h"
+#include "camera.h"
 
-float xAxis, yAxis = -3.0f;
+GLfloat deltaTime = 0.0f;	// Time between current frame and last frame
+GLfloat lastFrame = 0.0f;  	// Time of last frame
+
+glm::vec3 cameraPos = glm::vec3(0.0f, 0.0f, 3.0f);
+glm::vec3 cameraFront = glm::vec3(0.0f, 0.0f, -1.0f);
+glm::vec3 cameraUp    = glm::vec3(0.0f, 1.0f,  0.0f);
+
+Camera camera(glm::vec3(0.0f, 0.0f, 3.0f));
+
+bool keys[1024];
 
 void key_callback(GLFWwindow* window, int key, int scancode, int action, int mode)
 {
     // When a user presses the escape key, we set the WindowShouldClose property to true,
     // closing the application
     if(key == GLFW_KEY_ESCAPE && action == GLFW_PRESS)
+    {
         glfwSetWindowShouldClose(window, GL_TRUE);
+    }
     
-    float speed = 50.0f;
+    if (key < 0 && key >= 1024)
+    {
+        return;
+    }
     
-    if(key == GLFW_KEY_LEFT)
-        xAxis -= speed * 0.16f;
-    
-    if(key == GLFW_KEY_RIGHT)
-        xAxis += speed * 0.16f;
-    
-    if(key == GLFW_KEY_UP)
-        yAxis += speed * 0.16f;
-    
-    if(key == GLFW_KEY_DOWN)
-        yAxis -= speed * 0.16f;
+    if(action == GLFW_PRESS)
+    {
+        keys[key] = true;
+    }
+    else if(action == GLFW_RELEASE)
+    {
+        keys[key] = false;
+    }
 }
+
+GLfloat lastX = 400, lastY = 300;
+bool isFirstMouseInput = true;
+
+void mouse_callback(GLFWwindow* window, double xpos, double ypos)
+{
+    if(isFirstMouseInput)
+    {
+        lastX = xpos;
+        lastY = ypos;
+        isFirstMouseInput = false;
+    }
+    
+    GLfloat xoffset = xpos - lastX;
+    GLfloat yoffset = lastY - ypos;  // Reversed since y-coordinates go from bottom to left
+    
+    lastX = xpos;
+    lastY = ypos;
+    
+    camera.ProcessMouseMovement(xoffset, yoffset);
+}
+
+void scroll_callback(GLFWwindow* window, double xoffset, double yoffset)
+{
+    camera.ProcessMouseScroll(yoffset);
+}
+
+void doMovement()
+{
+    // Camera controls
+    if(keys[GLFW_KEY_W])
+        camera.ProcessKeyboard(FORWARD, deltaTime);
+    if(keys[GLFW_KEY_S])
+        camera.ProcessKeyboard(BACKWARD, deltaTime);
+    if(keys[GLFW_KEY_A])
+        camera.ProcessKeyboard(LEFT, deltaTime);
+    if(keys[GLFW_KEY_D])
+        camera.ProcessKeyboard(RIGHT, deltaTime);
+}
+
 
 GLuint VAO, VBO, EBO;
 
@@ -217,8 +269,12 @@ int main(int argc, const char * argv[])
     }
     glfwMakeContextCurrent(window);
     
+    glfwSetInputMode(window, GLFW_CURSOR, GLFW_CURSOR_DISABLED);
+    
     // register callbacks
     glfwSetKeyCallback(window, key_callback);
+    glfwSetCursorPosCallback(window, mouse_callback);
+    glfwSetScrollCallback(window, scroll_callback);
     
     // glew initialization
     glewExperimental = GL_TRUE;
@@ -313,7 +369,13 @@ int main(int argc, const char * argv[])
     // game loop
     while(!glfwWindowShouldClose(window))
     {
+        GLfloat currentFrame = glfwGetTime();
+        deltaTime = currentFrame - lastFrame;
+        lastFrame = currentFrame;
+        
         glfwPollEvents();
+        
+        doMovement();
         
         glClearColor(0.7f, 0.3f, 0.3f, 1.0f);
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
@@ -321,14 +383,21 @@ int main(int argc, const char * argv[])
         GLfloat timeValue = glfwGetTime();
         positionOffsetX += (sin(timeValue + 0.5f)) / 2;
         
+        GLfloat radius = 5.0f;
+        GLfloat camX = sin(glfwGetTime()) * radius;
+        GLfloat camZ = cos(glfwGetTime()) * radius;
+        
         glm::mat4 view;
-        // Note that we're translating the scene in the reverse direction of where we want to move
-        view = glm::translate(view, glm::vec3(0.0f, 0.0f, -3.0f));
-        view = glm::rotate(view, glm::radians(xAxis), glm::vec3(0.0f, 1.0f, 0.0f));
-        view = glm::rotate(view, glm::radians(yAxis), glm::vec3(1.0f, 0.0f, 0.0f));
+        view = view = camera.GetViewMatrix();
+        
+//        glm::mat4 view;
+//        // Note that we're translating the scene in the reverse direction of where we want to move
+//        view = glm::translate(view, glm::vec3(0.0f, 0.0f, -3.0f));
+//        view = glm::rotate(view, glm::radians(xAxis), glm::vec3(0.0f, 1.0f, 0.0f));
+//        view = glm::rotate(view, glm::radians(yAxis), glm::vec3(1.0f, 0.0f, 0.0f));
         
         glm::mat4 projection;
-        projection = glm::perspective(glm::radians(90.0f), (float)screenWidth / screenHeight, 0.1f, 100.0f);
+        projection = glm::perspective(glm::radians(camera.Zoom), (float)screenWidth / screenHeight, 0.1f, 100.0f);
         
         GLint modelLoc = glGetUniformLocation(simpleShader.Program, "model");
         

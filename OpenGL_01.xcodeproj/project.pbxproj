@@ -42,6 +42,7 @@
 		35A0C1EE1EA55D9E006C34AF /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		35A0C1F01EA55DA9006C34AF /* IOKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOKit.framework; path = System/Library/Frameworks/IOKit.framework; sourceTree = SDKROOT; };
 		35A0C1F21EA55DB0006C34AF /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
+		35CD1AE71EC66E94001AC9D2 /* camera.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = camera.h; sourceTree = "<group>"; };
 		35FDB0BC1EA929FC00A51757 /* test_texture.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = test_texture.JPG; sourceTree = "<group>"; };
 		35FDB0BD1EA934CE00A51757 /* libSOIL.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libSOIL.a; path = ../../../../../../../usr/local/lib/libSOIL.a; sourceTree = "<group>"; };
 		35FDB0BF1EA935AF00A51757 /* container.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = container.jpg; sourceTree = "<group>"; };
@@ -99,6 +100,7 @@
 				355DCF181EA6BC770029CD24 /* Shaders */,
 				35A0C1E01EA3859E006C34AF /* main.cpp */,
 				354418C01EA8093B0094EB72 /* shader-loader.h */,
+				35CD1AE71EC66E94001AC9D2 /* camera.h */,
 			);
 			path = OpenGL_01;
 			sourceTree = "<group>";
