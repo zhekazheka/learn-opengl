@@ -226,6 +226,11 @@ int main(int argc, const char * argv[])
     glm::vec3 objectColor = glm::vec3(1.0f, 0.5f, 0.31f);
     glm::vec3 lightColor = glm::vec3(1.0f, 1.0f, 1.0f);
     
+    // testing variable to move light in circle
+    float anglePhi = 0.0f;
+    float rotationSpeed = 1.5f;
+    float circleRadius = 2.0f;
+    
     // render loop
     // -----------
     while (!glfwWindowShouldClose(window))
@@ -239,6 +244,16 @@ int main(int argc, const char * argv[])
         // input
         // -----
         doMovement();
+        
+        // move light in circle for fun
+        // ----------------------------
+        lightPos.x = circleRadius * sin(anglePhi);
+        lightPos.y = circleRadius * cos(anglePhi);
+        anglePhi += rotationSpeed * deltaTime;
+        if(anglePhi >= 360.0f)
+        {
+            anglePhi = 0.0f;
+        }
         
         // render
         // ------
