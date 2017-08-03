@@ -35,8 +35,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		353B70521F2A8072007AFD6A /* SimpleColour.frag */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; name = SimpleColour.frag; path = Shaders/SimpleColour.frag; sourceTree = "<group>"; };
-		353B70531F2A8072007AFD6A /* SimpleColour.ver */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = SimpleColour.ver; path = Shaders/SimpleColour.ver; sourceTree = "<group>"; };
+		353B70521F2A8072007AFD6A /* BasePhong.frag */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; name = BasePhong.frag; path = Shaders/BasePhong.frag; sourceTree = "<group>"; };
+		353B70531F2A8072007AFD6A /* BasePhong.ver */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = BasePhong.ver; path = Shaders/BasePhong.ver; sourceTree = "<group>"; };
 		353B70541F2A829E007AFD6A /* mainLighting.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = mainLighting.cpp; sourceTree = "<group>"; };
 		353B70561F2A8621007AFD6A /* SimpleLightSource.frag */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; name = SimpleLightSource.frag; path = Shaders/SimpleLightSource.frag; sourceTree = "<group>"; };
 		353B70571F2A8621007AFD6A /* SimpleLightSource.ver */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = SimpleLightSource.ver; path = Shaders/SimpleLightSource.ver; sourceTree = "<group>"; };
@@ -53,6 +53,8 @@
 		35A0C1F01EA55DA9006C34AF /* IOKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOKit.framework; path = System/Library/Frameworks/IOKit.framework; sourceTree = SDKROOT; };
 		35A0C1F21EA55DB0006C34AF /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
 		35CD1AE71EC66E94001AC9D2 /* camera.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = camera.h; sourceTree = "<group>"; };
+		35D8A41D1F33C0F300C6F1F2 /* BaseGouraud.frag */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; name = BaseGouraud.frag; path = Shaders/BaseGouraud.frag; sourceTree = "<group>"; };
+		35D8A41E1F33C0F300C6F1F2 /* BaseGouraud.ver */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = BaseGouraud.ver; path = Shaders/BaseGouraud.ver; sourceTree = "<group>"; };
 		35FDB0BC1EA929FC00A51757 /* test_texture.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = test_texture.JPG; sourceTree = "<group>"; };
 		35FDB0BD1EA934CE00A51757 /* libSOIL.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libSOIL.a; path = ../../../../../../../usr/local/lib/libSOIL.a; sourceTree = "<group>"; };
 		35FDB0BF1EA935AF00A51757 /* container.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = container.jpg; sourceTree = "<group>"; };
@@ -91,10 +93,12 @@
 		355DCF181EA6BC770029CD24 /* Shaders */ = {
 			isa = PBXGroup;
 			children = (
+				35D8A41D1F33C0F300C6F1F2 /* BaseGouraud.frag */,
+				35D8A41E1F33C0F300C6F1F2 /* BaseGouraud.ver */,
 				353B70561F2A8621007AFD6A /* SimpleLightSource.frag */,
 				353B70571F2A8621007AFD6A /* SimpleLightSource.ver */,
-				353B70521F2A8072007AFD6A /* SimpleColour.frag */,
-				353B70531F2A8072007AFD6A /* SimpleColour.ver */,
+				353B70521F2A8072007AFD6A /* BasePhong.frag */,
+				353B70531F2A8072007AFD6A /* BasePhong.ver */,
 				354418C21EA80B870094EB72 /* Simple.ver */,
 				354418C31EA80BB70094EB72 /* Simple.frag */,
 			);

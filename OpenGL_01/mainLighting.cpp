@@ -143,8 +143,8 @@ int main(int argc, const char * argv[])
     
     // build and compile our shader zprogram
     // ------------------------------------
-    ShaderLoader lightingShader("../../../OpenGL_01/Shaders/SimpleColour.ver",
-                              "../../../OpenGL_01/Shaders/SimpleColour.frag");
+    ShaderLoader lightingShader("../../../OpenGL_01/Shaders/BaseGouraud.ver",
+                              "../../../OpenGL_01/Shaders/BaseGouraud.frag");
     ShaderLoader lampShader("../../../OpenGL_01/Shaders/SimpleLightSource.ver",
                               "../../../OpenGL_01/Shaders/SimpleLightSource.frag");
     
@@ -228,7 +228,7 @@ int main(int argc, const char * argv[])
     
     // testing variable to move light in circle
     float anglePhi = 0.0f;
-    float rotationSpeed = 1.5f;
+    float rotationSpeed = 0.23f;
     float circleRadius = 2.0f;
     
     // render loop
