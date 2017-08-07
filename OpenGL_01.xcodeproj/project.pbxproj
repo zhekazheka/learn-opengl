@@ -65,7 +65,6 @@
 		35CD1AE71EC66E94001AC9D2 /* camera.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = camera.h; sourceTree = "<group>"; };
 		35D8A41D1F33C0F300C6F1F2 /* BaseGouraud.frag */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; name = BaseGouraud.frag; path = Shaders/BaseGouraud.frag; sourceTree = "<group>"; };
 		35D8A41E1F33C0F300C6F1F2 /* BaseGouraud.ver */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = BaseGouraud.ver; path = Shaders/BaseGouraud.ver; sourceTree = "<group>"; };
-		35FDB0BC1EA929FC00A51757 /* test_texture.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = test_texture.JPG; sourceTree = "<group>"; };
 		35FDB0BD1EA934CE00A51757 /* libSOIL.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libSOIL.a; path = ../../../../../../../usr/local/lib/libSOIL.a; sourceTree = "<group>"; };
 		35FDB0BF1EA935AF00A51757 /* container.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = container.jpg; sourceTree = "<group>"; };
 		35FDB0C01EA935AF00A51757 /* wall.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = wall.jpg; sourceTree = "<group>"; };
@@ -182,7 +181,6 @@
 				35FDB0BF1EA935AF00A51757 /* container.jpg */,
 				35C436E21F390AF500D9BE10 /* container2_specular.png */,
 				35FDB0C01EA935AF00A51757 /* wall.jpg */,
-				35FDB0BC1EA929FC00A51757 /* test_texture.JPG */,
 			);
 			path = Textures;
 			sourceTree = "<group>";
