@@ -14,6 +14,7 @@
 		35A0C1EF1EA55D9E006C34AF /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35A0C1EE1EA55D9E006C34AF /* Cocoa.framework */; };
 		35A0C1F11EA55DA9006C34AF /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35A0C1F01EA55DA9006C34AF /* IOKit.framework */; };
 		35A0C1F31EA55DB0006C34AF /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35A0C1F21EA55DB0006C34AF /* CoreVideo.framework */; };
+		35C436DC1F38FB0800D9BE10 /* mainMaterial.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 35C436DB1F38FB0800D9BE10 /* mainMaterial.cpp */; };
 		84845B081F1D40260073978C /* libSOIL.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 84845AF01F1D40130073978C /* libSOIL.a */; };
 		84845B091F1D41450073978C /* libglfw.3.2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 35A0C1E81EA3864A006C34AF /* libglfw.3.2.dylib */; };
 		84845B1B1F1D44DF0073978C /* image_DXT.c in Sources */ = {isa = PBXBuildFile; fileRef = 84845B121F1D44DF0073978C /* image_DXT.c */; };
@@ -52,6 +53,9 @@
 		35A0C1EE1EA55D9E006C34AF /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		35A0C1F01EA55DA9006C34AF /* IOKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOKit.framework; path = System/Library/Frameworks/IOKit.framework; sourceTree = SDKROOT; };
 		35A0C1F21EA55DB0006C34AF /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
+		35C436D91F38F26400D9BE10 /* BaseMaterial.frag */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; name = BaseMaterial.frag; path = Shaders/BaseMaterial.frag; sourceTree = "<group>"; };
+		35C436DA1F38F26400D9BE10 /* BaseMaterial.ver */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = BaseMaterial.ver; path = Shaders/BaseMaterial.ver; sourceTree = "<group>"; };
+		35C436DB1F38FB0800D9BE10 /* mainMaterial.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = mainMaterial.cpp; sourceTree = "<group>"; };
 		35CD1AE71EC66E94001AC9D2 /* camera.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = camera.h; sourceTree = "<group>"; };
 		35D8A41D1F33C0F300C6F1F2 /* BaseGouraud.frag */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; name = BaseGouraud.frag; path = Shaders/BaseGouraud.frag; sourceTree = "<group>"; };
 		35D8A41E1F33C0F300C6F1F2 /* BaseGouraud.ver */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = BaseGouraud.ver; path = Shaders/BaseGouraud.ver; sourceTree = "<group>"; };
@@ -93,6 +97,8 @@
 		355DCF181EA6BC770029CD24 /* Shaders */ = {
 			isa = PBXGroup;
 			children = (
+				35C436D91F38F26400D9BE10 /* BaseMaterial.frag */,
+				35C436DA1F38F26400D9BE10 /* BaseMaterial.ver */,
 				35D8A41D1F33C0F300C6F1F2 /* BaseGouraud.frag */,
 				35D8A41E1F33C0F300C6F1F2 /* BaseGouraud.ver */,
 				353B70561F2A8621007AFD6A /* SimpleLightSource.frag */,
@@ -129,6 +135,7 @@
 				35FDB0BA1EA929FC00A51757 /* Resources */,
 				355DCF181EA6BC770029CD24 /* Shaders */,
 				35A0C1E01EA3859E006C34AF /* main.cpp */,
+				35C436DB1F38FB0800D9BE10 /* mainMaterial.cpp */,
 				353B70541F2A829E007AFD6A /* mainLighting.cpp */,
 				354418C01EA8093B0094EB72 /* shader-loader.h */,
 				35CD1AE71EC66E94001AC9D2 /* camera.h */,
@@ -272,6 +279,7 @@
 				84845B1E1F1D44DF0073978C /* stb_image_aug.c in Sources */,
 				353B70551F2A829E007AFD6A /* mainLighting.cpp in Sources */,
 				84845B1B1F1D44DF0073978C /* image_DXT.c in Sources */,
+				35C436DC1F38FB0800D9BE10 /* mainMaterial.cpp in Sources */,
 				84845B1D1F1D44DF0073978C /* SOIL.c in Sources */,
 				35A0C1E11EA3859E006C34AF /* main.cpp in Sources */,
 			);
