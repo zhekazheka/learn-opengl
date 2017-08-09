@@ -37,6 +37,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		3506034A1F3B98BE00DB31B6 /* matrix.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = matrix.jpg; sourceTree = "<group>"; };
 		353B70521F2A8072007AFD6A /* BasePhong.frag */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; name = BasePhong.frag; path = Shaders/BasePhong.frag; sourceTree = "<group>"; };
 		353B70531F2A8072007AFD6A /* BasePhong.ver */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = BasePhong.ver; path = Shaders/BasePhong.ver; sourceTree = "<group>"; };
 		353B70541F2A829E007AFD6A /* mainLighting.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = mainLighting.cpp; sourceTree = "<group>"; };
@@ -180,6 +181,7 @@
 				35C436E11F39075100D9BE10 /* container2.png */,
 				35FDB0BF1EA935AF00A51757 /* container.jpg */,
 				35C436E21F390AF500D9BE10 /* container2_specular.png */,
+				3506034A1F3B98BE00DB31B6 /* matrix.jpg */,
 				35FDB0C01EA935AF00A51757 /* wall.jpg */,
 			);
 			path = Textures;

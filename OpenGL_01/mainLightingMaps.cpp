@@ -242,6 +242,7 @@ int main(int argc, const char * argv[])
     // load textures
     // -----------------------------------------------------------------------------
     unsigned int diffuseMap = loadTexture("../../../OpenGL_01/Resources/Textures/container2.png");
+    unsigned int emissionMap = loadTexture("../../../OpenGL_01/Resources/Textures/matrix.jpg");
     unsigned int specularMap = loadTexture("../../../OpenGL_01/Resources/Textures/container2_specular.png");
     
     // shader configuration
@@ -249,6 +250,7 @@ int main(int argc, const char * argv[])
     lightingShader.use();
     lightingShader.setInt("material.diffuse", 0);
     lightingShader.setInt("material.specular", 1);
+    lightingShader.setInt("material.emission", 2);
     
     // render loop
     // -----------
@@ -294,7 +296,7 @@ int main(int argc, const char * argv[])
         lightingShader.setVec3("lightPos",  lightPos);
         
         lightingShader.setVec3("light.ambient",  ambientColor);
-        lightingShader.setVec3("light.diffuse",  diffuseColor); // darken the light a bit to fit the scene
+        lightingShader.setVec3("light.diffuse",  diffuseColor);
         lightingShader.setVec3("light.specular", 1.0f, 1.0f, 1.0f);
 
         lightingShader.setVec3("material.specular", 0.5f, 0.5f, 0.5f);
@@ -318,6 +320,10 @@ int main(int argc, const char * argv[])
         // bind specular map
         glActiveTexture(GL_TEXTURE1);
         glBindTexture(GL_TEXTURE_2D, specularMap);
+        
+        // bind emission map
+        glActiveTexture(GL_TEXTURE2);
+        glBindTexture(GL_TEXTURE_2D, emissionMap);
         
         // render the cube
         glBindVertexArray(cubeVAO);
