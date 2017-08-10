@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3506034C1F3B9E3600DB31B6 /* mainDirectionalLight.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3506034B1F3B9E3600DB31B6 /* mainDirectionalLight.cpp */; };
+		350603521F3BA90C00DB31B6 /* mainPointLight.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 350603511F3BA90C00DB31B6 /* mainPointLight.cpp */; };
 		353B70551F2A829E007AFD6A /* mainLighting.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 353B70541F2A829E007AFD6A /* mainLighting.cpp */; };
 		35A0C1E11EA3859E006C34AF /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 35A0C1E01EA3859E006C34AF /* main.cpp */; };
 		35A0C1EB1EA3E5AF006C34AF /* libGLEW.2.0.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 35A0C1EA1EA3E5AF006C34AF /* libGLEW.2.0.0.dylib */; };
@@ -38,6 +40,12 @@
 
 /* Begin PBXFileReference section */
 		3506034A1F3B98BE00DB31B6 /* matrix.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = matrix.jpg; sourceTree = "<group>"; };
+		3506034B1F3B9E3600DB31B6 /* mainDirectionalLight.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = mainDirectionalLight.cpp; sourceTree = "<group>"; };
+		3506034D1F3B9EAA00DB31B6 /* DirectionalLight.frag */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; name = DirectionalLight.frag; path = Shaders/DirectionalLight.frag; sourceTree = "<group>"; };
+		3506034E1F3B9EAA00DB31B6 /* DirectionalLight.ver */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = DirectionalLight.ver; path = Shaders/DirectionalLight.ver; sourceTree = "<group>"; };
+		3506034F1F3BA80000DB31B6 /* PointLight.frag */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; name = PointLight.frag; path = Shaders/PointLight.frag; sourceTree = "<group>"; };
+		350603501F3BA80000DB31B6 /* PointLight.ver */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = PointLight.ver; path = Shaders/PointLight.ver; sourceTree = "<group>"; };
+		350603511F3BA90C00DB31B6 /* mainPointLight.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = mainPointLight.cpp; sourceTree = "<group>"; };
 		353B70521F2A8072007AFD6A /* BasePhong.frag */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; name = BasePhong.frag; path = Shaders/BasePhong.frag; sourceTree = "<group>"; };
 		353B70531F2A8072007AFD6A /* BasePhong.ver */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = BasePhong.ver; path = Shaders/BasePhong.ver; sourceTree = "<group>"; };
 		353B70541F2A829E007AFD6A /* mainLighting.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = mainLighting.cpp; sourceTree = "<group>"; };
@@ -103,6 +111,10 @@
 		355DCF181EA6BC770029CD24 /* Shaders */ = {
 			isa = PBXGroup;
 			children = (
+				3506034F1F3BA80000DB31B6 /* PointLight.frag */,
+				350603501F3BA80000DB31B6 /* PointLight.ver */,
+				3506034D1F3B9EAA00DB31B6 /* DirectionalLight.frag */,
+				3506034E1F3B9EAA00DB31B6 /* DirectionalLight.ver */,
 				35C436DF1F39033800D9BE10 /* BaseLightingMap.frag */,
 				35C436E01F39033800D9BE10 /* BaseLightingMap.ver */,
 				35C436D91F38F26400D9BE10 /* BaseMaterial.frag */,
@@ -146,6 +158,8 @@
 				35C436DB1F38FB0800D9BE10 /* mainMaterial.cpp */,
 				35C436DD1F3902DC00D9BE10 /* mainLightingMaps.cpp */,
 				353B70541F2A829E007AFD6A /* mainLighting.cpp */,
+				3506034B1F3B9E3600DB31B6 /* mainDirectionalLight.cpp */,
+				350603511F3BA90C00DB31B6 /* mainPointLight.cpp */,
 				354418C01EA8093B0094EB72 /* shader-loader.h */,
 				35CD1AE71EC66E94001AC9D2 /* camera.h */,
 			);
@@ -287,8 +301,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				84845B1C1F1D44DF0073978C /* image_helper.c in Sources */,
+				3506034C1F3B9E3600DB31B6 /* mainDirectionalLight.cpp in Sources */,
 				35C436DE1F3902DC00D9BE10 /* mainLightingMaps.cpp in Sources */,
 				84845B1E1F1D44DF0073978C /* stb_image_aug.c in Sources */,
+				350603521F3BA90C00DB31B6 /* mainPointLight.cpp in Sources */,
 				353B70551F2A829E007AFD6A /* mainLighting.cpp in Sources */,
 				84845B1B1F1D44DF0073978C /* image_DXT.c in Sources */,
 				35C436DC1F38FB0800D9BE10 /* mainMaterial.cpp in Sources */,
