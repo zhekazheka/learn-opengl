@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		3506034C1F3B9E3600DB31B6 /* mainDirectionalLight.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3506034B1F3B9E3600DB31B6 /* mainDirectionalLight.cpp */; };
 		350603521F3BA90C00DB31B6 /* mainPointLight.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 350603511F3BA90C00DB31B6 /* mainPointLight.cpp */; };
+		3526EBCD1F422B9E00186CF1 /* mainSpotLight.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3526EBCC1F422B9E00186CF1 /* mainSpotLight.cpp */; };
 		353B70551F2A829E007AFD6A /* mainLighting.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 353B70541F2A829E007AFD6A /* mainLighting.cpp */; };
 		35A0C1E11EA3859E006C34AF /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 35A0C1E01EA3859E006C34AF /* main.cpp */; };
 		35A0C1EB1EA3E5AF006C34AF /* libGLEW.2.0.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 35A0C1EA1EA3E5AF006C34AF /* libGLEW.2.0.0.dylib */; };
@@ -42,17 +43,20 @@
 		3506034A1F3B98BE00DB31B6 /* matrix.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = matrix.jpg; sourceTree = "<group>"; };
 		3506034B1F3B9E3600DB31B6 /* mainDirectionalLight.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = mainDirectionalLight.cpp; sourceTree = "<group>"; };
 		3506034D1F3B9EAA00DB31B6 /* DirectionalLight.frag */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; name = DirectionalLight.frag; path = Shaders/DirectionalLight.frag; sourceTree = "<group>"; };
-		3506034E1F3B9EAA00DB31B6 /* DirectionalLight.ver */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = DirectionalLight.ver; path = Shaders/DirectionalLight.ver; sourceTree = "<group>"; };
+		3506034E1F3B9EAA00DB31B6 /* DirectionalLight.vert */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; name = DirectionalLight.vert; path = Shaders/DirectionalLight.vert; sourceTree = "<group>"; };
 		3506034F1F3BA80000DB31B6 /* PointLight.frag */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; name = PointLight.frag; path = Shaders/PointLight.frag; sourceTree = "<group>"; };
-		350603501F3BA80000DB31B6 /* PointLight.ver */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = PointLight.ver; path = Shaders/PointLight.ver; sourceTree = "<group>"; };
+		350603501F3BA80000DB31B6 /* PointLight.vert */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; name = PointLight.vert; path = Shaders/PointLight.vert; sourceTree = "<group>"; };
 		350603511F3BA90C00DB31B6 /* mainPointLight.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = mainPointLight.cpp; sourceTree = "<group>"; };
+		3526EBCA1F422AD300186CF1 /* SpotLight.frag */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; name = SpotLight.frag; path = Shaders/SpotLight.frag; sourceTree = "<group>"; };
+		3526EBCB1F422AD300186CF1 /* SpotLight.vert */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; name = SpotLight.vert; path = Shaders/SpotLight.vert; sourceTree = "<group>"; };
+		3526EBCC1F422B9E00186CF1 /* mainSpotLight.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = mainSpotLight.cpp; sourceTree = "<group>"; };
 		353B70521F2A8072007AFD6A /* BasePhong.frag */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; name = BasePhong.frag; path = Shaders/BasePhong.frag; sourceTree = "<group>"; };
-		353B70531F2A8072007AFD6A /* BasePhong.ver */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = BasePhong.ver; path = Shaders/BasePhong.ver; sourceTree = "<group>"; };
+		353B70531F2A8072007AFD6A /* BasePhong.vert */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; name = BasePhong.vert; path = Shaders/BasePhong.vert; sourceTree = "<group>"; };
 		353B70541F2A829E007AFD6A /* mainLighting.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = mainLighting.cpp; sourceTree = "<group>"; };
 		353B70561F2A8621007AFD6A /* SimpleLightSource.frag */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; name = SimpleLightSource.frag; path = Shaders/SimpleLightSource.frag; sourceTree = "<group>"; };
-		353B70571F2A8621007AFD6A /* SimpleLightSource.ver */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = SimpleLightSource.ver; path = Shaders/SimpleLightSource.ver; sourceTree = "<group>"; };
+		353B70571F2A8621007AFD6A /* SimpleLightSource.vert */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; name = SimpleLightSource.vert; path = Shaders/SimpleLightSource.vert; sourceTree = "<group>"; };
 		354418C01EA8093B0094EB72 /* shader-loader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "shader-loader.h"; sourceTree = "<group>"; };
-		354418C21EA80B870094EB72 /* Simple.ver */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = Simple.ver; path = Shaders/Simple.ver; sourceTree = "<group>"; };
+		354418C21EA80B870094EB72 /* Simple.vert */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; name = Simple.vert; path = Shaders/Simple.vert; sourceTree = "<group>"; };
 		354418C31EA80BB70094EB72 /* Simple.frag */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; name = Simple.frag; path = Shaders/Simple.frag; sourceTree = "<group>"; };
 		354502D11EA5634600F3B587 /* libglfw3.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libglfw3.a; path = ../../../../../../../usr/local/lib/libglfw3.a; sourceTree = "<group>"; };
 		35A0C1DD1EA3859E006C34AF /* OpenGL_01 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = OpenGL_01; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -64,16 +68,16 @@
 		35A0C1F01EA55DA9006C34AF /* IOKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOKit.framework; path = System/Library/Frameworks/IOKit.framework; sourceTree = SDKROOT; };
 		35A0C1F21EA55DB0006C34AF /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
 		35C436D91F38F26400D9BE10 /* BaseMaterial.frag */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; name = BaseMaterial.frag; path = Shaders/BaseMaterial.frag; sourceTree = "<group>"; };
-		35C436DA1F38F26400D9BE10 /* BaseMaterial.ver */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = BaseMaterial.ver; path = Shaders/BaseMaterial.ver; sourceTree = "<group>"; };
+		35C436DA1F38F26400D9BE10 /* BaseMaterial.vert */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; name = BaseMaterial.vert; path = Shaders/BaseMaterial.vert; sourceTree = "<group>"; };
 		35C436DB1F38FB0800D9BE10 /* mainMaterial.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = mainMaterial.cpp; sourceTree = "<group>"; };
 		35C436DD1F3902DC00D9BE10 /* mainLightingMaps.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = mainLightingMaps.cpp; sourceTree = "<group>"; };
 		35C436DF1F39033800D9BE10 /* BaseLightingMap.frag */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; name = BaseLightingMap.frag; path = Shaders/BaseLightingMap.frag; sourceTree = "<group>"; };
-		35C436E01F39033800D9BE10 /* BaseLightingMap.ver */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = BaseLightingMap.ver; path = Shaders/BaseLightingMap.ver; sourceTree = "<group>"; };
+		35C436E01F39033800D9BE10 /* BaseLightingMap.vert */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; name = BaseLightingMap.vert; path = Shaders/BaseLightingMap.vert; sourceTree = "<group>"; };
 		35C436E11F39075100D9BE10 /* container2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = container2.png; sourceTree = "<group>"; };
 		35C436E21F390AF500D9BE10 /* container2_specular.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = container2_specular.png; sourceTree = "<group>"; };
 		35CD1AE71EC66E94001AC9D2 /* camera.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = camera.h; sourceTree = "<group>"; };
 		35D8A41D1F33C0F300C6F1F2 /* BaseGouraud.frag */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; name = BaseGouraud.frag; path = Shaders/BaseGouraud.frag; sourceTree = "<group>"; };
-		35D8A41E1F33C0F300C6F1F2 /* BaseGouraud.ver */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = BaseGouraud.ver; path = Shaders/BaseGouraud.ver; sourceTree = "<group>"; };
+		35D8A41E1F33C0F300C6F1F2 /* BaseGouraud.vert */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; name = BaseGouraud.vert; path = Shaders/BaseGouraud.vert; sourceTree = "<group>"; };
 		35FDB0BD1EA934CE00A51757 /* libSOIL.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libSOIL.a; path = ../../../../../../../usr/local/lib/libSOIL.a; sourceTree = "<group>"; };
 		35FDB0BF1EA935AF00A51757 /* container.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = container.jpg; sourceTree = "<group>"; };
 		35FDB0C01EA935AF00A51757 /* wall.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = wall.jpg; sourceTree = "<group>"; };
@@ -111,21 +115,23 @@
 		355DCF181EA6BC770029CD24 /* Shaders */ = {
 			isa = PBXGroup;
 			children = (
+				3526EBCA1F422AD300186CF1 /* SpotLight.frag */,
+				3526EBCB1F422AD300186CF1 /* SpotLight.vert */,
 				3506034F1F3BA80000DB31B6 /* PointLight.frag */,
-				350603501F3BA80000DB31B6 /* PointLight.ver */,
+				350603501F3BA80000DB31B6 /* PointLight.vert */,
 				3506034D1F3B9EAA00DB31B6 /* DirectionalLight.frag */,
-				3506034E1F3B9EAA00DB31B6 /* DirectionalLight.ver */,
+				3506034E1F3B9EAA00DB31B6 /* DirectionalLight.vert */,
 				35C436DF1F39033800D9BE10 /* BaseLightingMap.frag */,
-				35C436E01F39033800D9BE10 /* BaseLightingMap.ver */,
+				35C436E01F39033800D9BE10 /* BaseLightingMap.vert */,
 				35C436D91F38F26400D9BE10 /* BaseMaterial.frag */,
-				35C436DA1F38F26400D9BE10 /* BaseMaterial.ver */,
+				35C436DA1F38F26400D9BE10 /* BaseMaterial.vert */,
 				35D8A41D1F33C0F300C6F1F2 /* BaseGouraud.frag */,
-				35D8A41E1F33C0F300C6F1F2 /* BaseGouraud.ver */,
+				35D8A41E1F33C0F300C6F1F2 /* BaseGouraud.vert */,
 				353B70561F2A8621007AFD6A /* SimpleLightSource.frag */,
-				353B70571F2A8621007AFD6A /* SimpleLightSource.ver */,
+				353B70571F2A8621007AFD6A /* SimpleLightSource.vert */,
 				353B70521F2A8072007AFD6A /* BasePhong.frag */,
-				353B70531F2A8072007AFD6A /* BasePhong.ver */,
-				354418C21EA80B870094EB72 /* Simple.ver */,
+				353B70531F2A8072007AFD6A /* BasePhong.vert */,
+				354418C21EA80B870094EB72 /* Simple.vert */,
 				354418C31EA80BB70094EB72 /* Simple.frag */,
 			);
 			name = Shaders;
@@ -160,6 +166,7 @@
 				353B70541F2A829E007AFD6A /* mainLighting.cpp */,
 				3506034B1F3B9E3600DB31B6 /* mainDirectionalLight.cpp */,
 				350603511F3BA90C00DB31B6 /* mainPointLight.cpp */,
+				3526EBCC1F422B9E00186CF1 /* mainSpotLight.cpp */,
 				354418C01EA8093B0094EB72 /* shader-loader.h */,
 				35CD1AE71EC66E94001AC9D2 /* camera.h */,
 			);
@@ -302,6 +309,7 @@
 			files = (
 				84845B1C1F1D44DF0073978C /* image_helper.c in Sources */,
 				3506034C1F3B9E3600DB31B6 /* mainDirectionalLight.cpp in Sources */,
+				3526EBCD1F422B9E00186CF1 /* mainSpotLight.cpp in Sources */,
 				35C436DE1F3902DC00D9BE10 /* mainLightingMaps.cpp in Sources */,
 				84845B1E1F1D44DF0073978C /* stb_image_aug.c in Sources */,
 				350603521F3BA90C00DB31B6 /* mainPointLight.cpp in Sources */,
