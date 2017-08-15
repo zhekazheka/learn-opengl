@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		35035DD21F436B220043B9EA /* mainSeveralLights.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 35035DD11F436B220043B9EA /* mainSeveralLights.cpp */; };
+		35035DD61F4394810043B9EA /* libassimp.4.0.1.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 35035DD51F4394810043B9EA /* libassimp.4.0.1.dylib */; };
 		3506034C1F3B9E3600DB31B6 /* mainDirectionalLight.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3506034B1F3B9E3600DB31B6 /* mainDirectionalLight.cpp */; };
 		350603521F3BA90C00DB31B6 /* mainPointLight.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 350603511F3BA90C00DB31B6 /* mainPointLight.cpp */; };
 		3526EBCD1F422B9E00186CF1 /* mainSpotLight.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3526EBCC1F422B9E00186CF1 /* mainSpotLight.cpp */; };
@@ -44,6 +45,7 @@
 		35035DD11F436B220043B9EA /* mainSeveralLights.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = mainSeveralLights.cpp; sourceTree = "<group>"; };
 		35035DD31F436B3F0043B9EA /* SeveralLights.frag */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; name = SeveralLights.frag; path = Shaders/SeveralLights.frag; sourceTree = "<group>"; };
 		35035DD41F436B3F0043B9EA /* SeveralLights.vert */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; name = SeveralLights.vert; path = Shaders/SeveralLights.vert; sourceTree = "<group>"; };
+		35035DD51F4394810043B9EA /* libassimp.4.0.1.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libassimp.4.0.1.dylib; path = ../../../../../../../usr/local/Cellar/assimp/4.0.1/lib/libassimp.4.0.1.dylib; sourceTree = "<group>"; };
 		3506034A1F3B98BE00DB31B6 /* matrix.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = matrix.jpg; sourceTree = "<group>"; };
 		3506034B1F3B9E3600DB31B6 /* mainDirectionalLight.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = mainDirectionalLight.cpp; sourceTree = "<group>"; };
 		3506034D1F3B9EAA00DB31B6 /* DirectionalLight.frag */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; name = DirectionalLight.frag; path = Shaders/DirectionalLight.frag; sourceTree = "<group>"; };
@@ -110,6 +112,7 @@
 				35A0C1EF1EA55D9E006C34AF /* Cocoa.framework in Frameworks */,
 				35A0C1ED1EA3E601006C34AF /* OpenGL.framework in Frameworks */,
 				35A0C1EB1EA3E5AF006C34AF /* libGLEW.2.0.0.dylib in Frameworks */,
+				35035DD61F4394810043B9EA /* libassimp.4.0.1.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -183,6 +186,7 @@
 		35A0C1E71EA3864A006C34AF /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				35035DD51F4394810043B9EA /* libassimp.4.0.1.dylib */,
 				35FDB0BD1EA934CE00A51757 /* libSOIL.a */,
 				354502D11EA5634600F3B587 /* libglfw3.a */,
 				35A0C1F21EA55DB0006C34AF /* CoreVideo.framework */,
@@ -428,6 +432,7 @@
 					/usr/local/include,
 					/usr/local/Cellar/glew/2.0.0/include,
 					OpenGL_01/Libraries/SOIL/src,
+					/usr/local/Cellar/assimp/4.0.1/include,
 				);
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
@@ -436,6 +441,7 @@
 					"$(PROJECT_DIR)/OpenGL_01/Libraries",
 					"$(PROJECT_DIR)/OpenGL_01/Libraries/SOIL/lib",
 					/usr/local/Cellar/glfw/3.2.1/lib,
+					/usr/local/Cellar/assimp/4.0.1/lib,
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -448,6 +454,7 @@
 					/usr/local/include,
 					/usr/local/Cellar/glew/2.0.0/include,
 					OpenGL_01/Libraries/SOIL/src,
+					/usr/local/Cellar/assimp/4.0.1/include,
 				);
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
@@ -456,6 +463,7 @@
 					"$(PROJECT_DIR)/OpenGL_01/Libraries",
 					"$(PROJECT_DIR)/OpenGL_01/Libraries/SOIL/lib",
 					/usr/local/Cellar/glfw/3.2.1/lib,
+					/usr/local/Cellar/assimp/4.0.1/lib,
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
