@@ -6,8 +6,8 @@
 //  Copyright © 2017 HandMade. All rights reserved.
 //
 
-#ifndef shader_h
-#define shader_h
+#ifndef shader_loader_h
+#define shader_loader_h
 
 #include <string>
 #include <fstream>
@@ -169,4 +169,4 @@ public:
     GLuint Program;
 };
 
-#endif /* shader_h */
+#endif /* shader_loader_h */
