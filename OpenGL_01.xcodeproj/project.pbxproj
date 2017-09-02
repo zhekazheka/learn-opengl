@@ -454,6 +454,10 @@
 		84845B181F1D44DF0073978C /* stb_image_aug.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = stb_image_aug.h; sourceTree = "<group>"; };
 		84845B191F1D44DF0073978C /* stbi_DDS_aug_c.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = stbi_DDS_aug_c.h; sourceTree = "<group>"; };
 		84845B1A1F1D44DF0073978C /* stbi_DDS_aug.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = stbi_DDS_aug.h; sourceTree = "<group>"; };
+		84C70B5C1F5AD6C8006FF65D /* MysteryCup.mtl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = MysteryCup.mtl; sourceTree = "<group>"; };
+		84C70B5D1F5AD6C8006FF65D /* MysteryCup.obj */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = MysteryCup.obj; sourceTree = "<group>"; };
+		84C70B631F5AE28C006FF65D /* ModelLoading.frag */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; name = ModelLoading.frag; path = Shaders/ModelLoading.frag; sourceTree = "<group>"; };
+		84C70B641F5AE28C006FF65D /* ModelLoading.vert */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; name = ModelLoading.vert; path = Shaders/ModelLoading.vert; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -478,6 +482,8 @@
 		355DCF181EA6BC770029CD24 /* Shaders */ = {
 			isa = PBXGroup;
 			children = (
+				84C70B631F5AE28C006FF65D /* ModelLoading.frag */,
+				84C70B641F5AE28C006FF65D /* ModelLoading.vert */,
 				35035DD31F436B3F0043B9EA /* SeveralLights.frag */,
 				35035DD41F436B3F0043B9EA /* SeveralLights.vert */,
 				3526EBCA1F422AD300186CF1 /* SpotLight.frag */,
@@ -1035,6 +1041,7 @@
 		35F58DDB1F58CBFB0094854C /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				84C70B5B1F5AD6C8006FF65D /* MysteryCup */,
 				35F58E031F58D9B90094854C /* 313_cassina__lc2_armchair */,
 				35F58DDC1F58CBFB0094854C /* nanosuit */,
 			);
@@ -1145,6 +1152,15 @@
 				84845AFA1F1D40130073978C /* SOIL.h */,
 			);
 			path = src;
+			sourceTree = "<group>";
+		};
+		84C70B5B1F5AD6C8006FF65D /* MysteryCup */ = {
+			isa = PBXGroup;
+			children = (
+				84C70B5C1F5AD6C8006FF65D /* MysteryCup.mtl */,
+				84C70B5D1F5AD6C8006FF65D /* MysteryCup.obj */,
+			);
+			path = MysteryCup;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

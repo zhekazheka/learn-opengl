@@ -34,6 +34,8 @@ void doMovement();
 
 bool keys[1024];
 
+glm::vec3 lightPos(1.2f, 1.0f, 1.0f);
+
 // settings
 const unsigned int SCR_WIDTH = 800;
 const unsigned int SCR_HEIGHT = 600;
@@ -95,19 +97,30 @@ int main()
     
     // build and compile shaders
     // -------------------------
-    Shader ourShader("../../../OpenGL_01/Shaders/Simple.vert",
-                            "../../../OpenGL_01/Shaders/Simple.frag");
+    Shader ourShader("OpenGL_01/Shaders/ModelLoading.vert",
+                            "OpenGL_01/Shaders/ModelLoading.frag");
+    
+    Shader lampShader("OpenGL_01/Shaders/SimpleLightSource.vert",
+                     "OpenGL_01/Shaders/SimpleLightSource.frag");
     
 //    ShaderLoader ourShader("../../../OpenGL_01/Shaders/SimpleLightSource.vert",
 //                     "../../../OpenGL_01/Shaders/SimpleLightSource.frag");
     
     // load models
     // -----------
-    Model ourModel("../../../OpenGL_01/Resources/Models/313_cassina__lc2_armchair/313 Cassina__LC2_armchair.obj");
+    Model ourModel("OpenGL_01/Resources/Models/nanosuit/nanosuit.obj");
+    Model lampModel("OpenGL_01/Resources/Models/MysteryCup/MysteryCup.obj");
     
     
     // draw in wireframe
-    //glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
+//    glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
+    
+    // testing variable to move light in circle
+    float anglePhi = 0.0f;
+    float rotationSpeed = 1.5f;
+    float circleRadius = 2.0f;
+    
+    glm::vec3 lightColor = glm::vec3(1.0f, 1.0f, 1.0f);
     
     // render loop
     // -----------
@@ -123,6 +136,16 @@ int main()
         // -----
         doMovement();
         
+        // move light in circle for fun
+        // ----------------------------
+        lightPos.x = circleRadius * sin(anglePhi);
+        lightPos.y = circleRadius * cos(anglePhi);
+        anglePhi += rotationSpeed * deltaTime;
+        if(anglePhi >= 360.0f)
+        {
+            anglePhi = 0.0f;
+        }
+        
         // render
         // ------
         glClearColor(0.3f, 0.05f, 0.05f, 1.0f);
@@ -130,6 +153,30 @@ int main()
         
         // don't forget to enable shader before setting uniforms
         ourShader.use();
+        
+        ourShader.setVec3("viewPos",  camera.Position);
+        ourShader.setVec3("pointLight.position", lightPos);
+        
+        glm::vec3 diffuseColor = lightColor * glm::vec3(0.9f);
+        glm::vec3 ambientColor = diffuseColor * glm::vec3(0.2f);
+        
+        ourShader.setVec3("pointLight.ambient",  ambientColor);
+        ourShader.setVec3("pointLight.diffuse",  diffuseColor);
+        ourShader.setVec3("pointLight.specular", 1.0f, 1.0f, 1.0f);
+        ourShader.setFloat("pointLight.constant",  1.0f);
+        ourShader.setFloat("pointLight.linear",  0.045f);
+        ourShader.setFloat("pointLight.quadratic",  0.0075f);
+        
+        lightColor = glm::vec3(1.0f, 1.0f, 1.0f);
+        diffuseColor = lightColor * glm::vec3(0.9f);
+        ambientColor = diffuseColor * glm::vec3(0.2f);
+        
+        ourShader.setVec3("dirLight.direction", glm::vec3(0.8f, -1.0f, -0.0f));
+        ourShader.setVec3("dirLight.ambient",  ambientColor);
+        ourShader.setVec3("dirLight.diffuse",  diffuseColor);
+        ourShader.setVec3("dirLight.specular", 1.0f, 1.0f, 1.0f);
+
+        ourShader.setFloat("material.shininess", 64.0f);
         
         // view/projection transformations
         glm::mat4 projection = glm::perspective(glm::radians(camera.Zoom), (float)SCR_WIDTH / (float)SCR_HEIGHT, 0.1f, 100.0f);
@@ -143,6 +190,17 @@ int main()
         model = glm::scale(model, glm::vec3(0.2f, 0.2f, 0.2f));	// it's a bit too big for our scene, so scale it down
         ourShader.setMat4("model", model);
         ourModel.Draw(ourShader);
+        
+        // also draw the lamp object
+        lampShader.use();
+        lampShader.setMat4("projection", projection);
+        lampShader.setMat4("view", view);
+        model = glm::mat4();
+        model = glm::translate(model, lightPos);
+        model = glm::scale(model, glm::vec3(0.2f)); // a smaller cube
+        lampShader.setMat4("model", model);
+
+        lampModel.Draw(lampShader);
         
         
         // glfw: swap buffers and poll IO events (keys pressed/released, mouse moved etc.)
