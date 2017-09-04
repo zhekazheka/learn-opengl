@@ -29,6 +29,7 @@
 		84845B1C1F1D44DF0073978C /* image_helper.c in Sources */ = {isa = PBXBuildFile; fileRef = 84845B141F1D44DF0073978C /* image_helper.c */; };
 		84845B1D1F1D44DF0073978C /* SOIL.c in Sources */ = {isa = PBXBuildFile; fileRef = 84845B161F1D44DF0073978C /* SOIL.c */; };
 		84845B1E1F1D44DF0073978C /* stb_image_aug.c in Sources */ = {isa = PBXBuildFile; fileRef = 84845B171F1D44DF0073978C /* stb_image_aug.c */; };
+		84C70B661F5DEFD9006FF65D /* mainDepthTesting.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 84C70B651F5DEFD9006FF65D /* mainDepthTesting.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -458,6 +459,9 @@
 		84C70B5D1F5AD6C8006FF65D /* MysteryCup.obj */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = MysteryCup.obj; sourceTree = "<group>"; };
 		84C70B631F5AE28C006FF65D /* ModelLoading.frag */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; name = ModelLoading.frag; path = Shaders/ModelLoading.frag; sourceTree = "<group>"; };
 		84C70B641F5AE28C006FF65D /* ModelLoading.vert */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; name = ModelLoading.vert; path = Shaders/ModelLoading.vert; sourceTree = "<group>"; };
+		84C70B651F5DEFD9006FF65D /* mainDepthTesting.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = mainDepthTesting.cpp; sourceTree = "<group>"; };
+		84C70B671F5DF335006FF65D /* SimpleZTest.frag */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; name = SimpleZTest.frag; path = Shaders/SimpleZTest.frag; sourceTree = "<group>"; };
+		84C70B681F5DF335006FF65D /* SimpleZTest.vert */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; name = SimpleZTest.vert; path = Shaders/SimpleZTest.vert; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -482,6 +486,8 @@
 		355DCF181EA6BC770029CD24 /* Shaders */ = {
 			isa = PBXGroup;
 			children = (
+				84C70B671F5DF335006FF65D /* SimpleZTest.frag */,
+				84C70B681F5DF335006FF65D /* SimpleZTest.vert */,
 				84C70B631F5AE28C006FF65D /* ModelLoading.frag */,
 				84C70B641F5AE28C006FF65D /* ModelLoading.vert */,
 				35035DD31F436B3F0043B9EA /* SeveralLights.frag */,
@@ -540,6 +546,7 @@
 				3526EBCC1F422B9E00186CF1 /* mainSpotLight.cpp */,
 				35035DD11F436B220043B9EA /* mainSeveralLights.cpp */,
 				35F58DD21F58BB9C0094854C /* mainObjectLoading.cpp */,
+				84C70B651F5DEFD9006FF65D /* mainDepthTesting.cpp */,
 				354418C01EA8093B0094EB72 /* shader-loader.h */,
 				35CD1AE71EC66E94001AC9D2 /* camera.h */,
 				35F58DD41F58BBE30094854C /* data.h */,
@@ -1224,6 +1231,7 @@
 				3506034C1F3B9E3600DB31B6 /* mainDirectionalLight.cpp in Sources */,
 				3526EBCD1F422B9E00186CF1 /* mainSpotLight.cpp in Sources */,
 				35C436DE1F3902DC00D9BE10 /* mainLightingMaps.cpp in Sources */,
+				84C70B661F5DEFD9006FF65D /* mainDepthTesting.cpp in Sources */,
 				35035DD21F436B220043B9EA /* mainSeveralLights.cpp in Sources */,
 				84845B1E1F1D44DF0073978C /* stb_image_aug.c in Sources */,
 				350603521F3BA90C00DB31B6 /* mainPointLight.cpp in Sources */,
