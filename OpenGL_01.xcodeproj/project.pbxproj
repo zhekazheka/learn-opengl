@@ -32,6 +32,7 @@
 		84C70B661F5DEFD9006FF65D /* mainDepthTesting.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 84C70B651F5DEFD9006FF65D /* mainDepthTesting.cpp */; };
 		84C70B6A1F5F37FF006FF65D /* mainStencilTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 84C70B691F5F37FF006FF65D /* mainStencilTest.cpp */; };
 		84C70B6E1F6068B6006FF65D /* mainBlending.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 84C70B6D1F6068B6006FF65D /* mainBlending.cpp */; };
+		84C70B741F608D95006FF65D /* mainFramebuffers.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 84C70B731F608D95006FF65D /* mainFramebuffers.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -472,6 +473,9 @@
 		84C70B701F606946006FF65D /* SimpleBlending.vert */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; name = SimpleBlending.vert; path = Shaders/SimpleBlending.vert; sourceTree = "<group>"; };
 		84C70B711F606DBC006FF65D /* grass.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = grass.png; sourceTree = "<group>"; };
 		84C70B721F607550006FF65D /* blending_transparent_window.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blending_transparent_window.png; sourceTree = "<group>"; };
+		84C70B731F608D95006FF65D /* mainFramebuffers.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = mainFramebuffers.cpp; sourceTree = "<group>"; };
+		84C70B751F608F8E006FF65D /* ScreenSimple.frag */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; name = ScreenSimple.frag; path = Shaders/ScreenSimple.frag; sourceTree = "<group>"; };
+		84C70B761F608F8E006FF65D /* ScreenSimple.vert */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; name = ScreenSimple.vert; path = Shaders/ScreenSimple.vert; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -524,6 +528,8 @@
 				84C70B701F606946006FF65D /* SimpleBlending.vert */,
 				354418C21EA80B870094EB72 /* Simple.vert */,
 				354418C31EA80BB70094EB72 /* Simple.frag */,
+				84C70B751F608F8E006FF65D /* ScreenSimple.frag */,
+				84C70B761F608F8E006FF65D /* ScreenSimple.vert */,
 			);
 			name = Shaders;
 			sourceTree = "<group>";
@@ -563,6 +569,7 @@
 				84C70B651F5DEFD9006FF65D /* mainDepthTesting.cpp */,
 				84C70B691F5F37FF006FF65D /* mainStencilTest.cpp */,
 				84C70B6D1F6068B6006FF65D /* mainBlending.cpp */,
+				84C70B731F608D95006FF65D /* mainFramebuffers.cpp */,
 				354418C01EA8093B0094EB72 /* shader-loader.h */,
 				35CD1AE71EC66E94001AC9D2 /* camera.h */,
 				35F58DD41F58BBE30094854C /* data.h */,
@@ -1255,6 +1262,7 @@
 				84845B1E1F1D44DF0073978C /* stb_image_aug.c in Sources */,
 				350603521F3BA90C00DB31B6 /* mainPointLight.cpp in Sources */,
 				353B70551F2A829E007AFD6A /* mainLighting.cpp in Sources */,
+				84C70B741F608D95006FF65D /* mainFramebuffers.cpp in Sources */,
 				84845B1B1F1D44DF0073978C /* image_DXT.c in Sources */,
 				35F58DA01F58B5D60094854C /* glm.cpp in Sources */,
 				84C70B6A1F5F37FF006FF65D /* mainStencilTest.cpp in Sources */,
