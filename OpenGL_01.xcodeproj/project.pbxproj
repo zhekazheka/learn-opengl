@@ -30,6 +30,8 @@
 		84845B1D1F1D44DF0073978C /* SOIL.c in Sources */ = {isa = PBXBuildFile; fileRef = 84845B161F1D44DF0073978C /* SOIL.c */; };
 		84845B1E1F1D44DF0073978C /* stb_image_aug.c in Sources */ = {isa = PBXBuildFile; fileRef = 84845B171F1D44DF0073978C /* stb_image_aug.c */; };
 		84C70B661F5DEFD9006FF65D /* mainDepthTesting.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 84C70B651F5DEFD9006FF65D /* mainDepthTesting.cpp */; };
+		84C70B6A1F5F37FF006FF65D /* mainStencilTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 84C70B691F5F37FF006FF65D /* mainStencilTest.cpp */; };
+		84C70B6E1F6068B6006FF65D /* mainBlending.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 84C70B6D1F6068B6006FF65D /* mainBlending.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -462,6 +464,14 @@
 		84C70B651F5DEFD9006FF65D /* mainDepthTesting.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = mainDepthTesting.cpp; sourceTree = "<group>"; };
 		84C70B671F5DF335006FF65D /* SimpleZTest.frag */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; name = SimpleZTest.frag; path = Shaders/SimpleZTest.frag; sourceTree = "<group>"; };
 		84C70B681F5DF335006FF65D /* SimpleZTest.vert */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; name = SimpleZTest.vert; path = Shaders/SimpleZTest.vert; sourceTree = "<group>"; };
+		84C70B691F5F37FF006FF65D /* mainStencilTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = mainStencilTest.cpp; sourceTree = "<group>"; };
+		84C70B6B1F5F3A38006FF65D /* SimpleSingleColor.frag */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; name = SimpleSingleColor.frag; path = Shaders/SimpleSingleColor.frag; sourceTree = "<group>"; };
+		84C70B6C1F5F3A38006FF65D /* SimpleSingleColor.vert */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; name = SimpleSingleColor.vert; path = Shaders/SimpleSingleColor.vert; sourceTree = "<group>"; };
+		84C70B6D1F6068B6006FF65D /* mainBlending.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = mainBlending.cpp; sourceTree = "<group>"; };
+		84C70B6F1F606946006FF65D /* SimpleBlending.frag */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; name = SimpleBlending.frag; path = Shaders/SimpleBlending.frag; sourceTree = "<group>"; };
+		84C70B701F606946006FF65D /* SimpleBlending.vert */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; name = SimpleBlending.vert; path = Shaders/SimpleBlending.vert; sourceTree = "<group>"; };
+		84C70B711F606DBC006FF65D /* grass.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = grass.png; sourceTree = "<group>"; };
+		84C70B721F607550006FF65D /* blending_transparent_window.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blending_transparent_window.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -486,6 +496,8 @@
 		355DCF181EA6BC770029CD24 /* Shaders */ = {
 			isa = PBXGroup;
 			children = (
+				84C70B6B1F5F3A38006FF65D /* SimpleSingleColor.frag */,
+				84C70B6C1F5F3A38006FF65D /* SimpleSingleColor.vert */,
 				84C70B671F5DF335006FF65D /* SimpleZTest.frag */,
 				84C70B681F5DF335006FF65D /* SimpleZTest.vert */,
 				84C70B631F5AE28C006FF65D /* ModelLoading.frag */,
@@ -508,6 +520,8 @@
 				353B70571F2A8621007AFD6A /* SimpleLightSource.vert */,
 				353B70521F2A8072007AFD6A /* BasePhong.frag */,
 				353B70531F2A8072007AFD6A /* BasePhong.vert */,
+				84C70B6F1F606946006FF65D /* SimpleBlending.frag */,
+				84C70B701F606946006FF65D /* SimpleBlending.vert */,
 				354418C21EA80B870094EB72 /* Simple.vert */,
 				354418C31EA80BB70094EB72 /* Simple.frag */,
 			);
@@ -547,6 +561,8 @@
 				35035DD11F436B220043B9EA /* mainSeveralLights.cpp */,
 				35F58DD21F58BB9C0094854C /* mainObjectLoading.cpp */,
 				84C70B651F5DEFD9006FF65D /* mainDepthTesting.cpp */,
+				84C70B691F5F37FF006FF65D /* mainStencilTest.cpp */,
+				84C70B6D1F6068B6006FF65D /* mainBlending.cpp */,
 				354418C01EA8093B0094EB72 /* shader-loader.h */,
 				35CD1AE71EC66E94001AC9D2 /* camera.h */,
 				35F58DD41F58BBE30094854C /* data.h */,
@@ -1108,11 +1124,13 @@
 		35FDB0BB1EA929FC00A51757 /* Textures */ = {
 			isa = PBXGroup;
 			children = (
+				84C70B711F606DBC006FF65D /* grass.png */,
 				35C436E11F39075100D9BE10 /* container2.png */,
 				35FDB0BF1EA935AF00A51757 /* container.jpg */,
 				35C436E21F390AF500D9BE10 /* container2_specular.png */,
 				3506034A1F3B98BE00DB31B6 /* matrix.jpg */,
 				35FDB0C01EA935AF00A51757 /* wall.jpg */,
+				84C70B721F607550006FF65D /* blending_transparent_window.png */,
 			);
 			path = Textures;
 			sourceTree = "<group>";
@@ -1227,6 +1245,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84C70B6E1F6068B6006FF65D /* mainBlending.cpp in Sources */,
 				84845B1C1F1D44DF0073978C /* image_helper.c in Sources */,
 				3506034C1F3B9E3600DB31B6 /* mainDirectionalLight.cpp in Sources */,
 				3526EBCD1F422B9E00186CF1 /* mainSpotLight.cpp in Sources */,
@@ -1238,6 +1257,7 @@
 				353B70551F2A829E007AFD6A /* mainLighting.cpp in Sources */,
 				84845B1B1F1D44DF0073978C /* image_DXT.c in Sources */,
 				35F58DA01F58B5D60094854C /* glm.cpp in Sources */,
+				84C70B6A1F5F37FF006FF65D /* mainStencilTest.cpp in Sources */,
 				35C436DC1F38FB0800D9BE10 /* mainMaterial.cpp in Sources */,
 				84845B1D1F1D44DF0073978C /* SOIL.c in Sources */,
 				35F58DD31F58BB9C0094854C /* mainObjectLoading.cpp in Sources */,

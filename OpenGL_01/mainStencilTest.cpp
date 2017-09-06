@@ -96,10 +96,24 @@
 //    glEnable(GL_DEPTH_TEST);
 //    glDepthFunc(GL_LESS);
 //    
+//    glEnable(GL_STENCIL_TEST);
+//    
+//    // This tells OpenGL that whenever the stencil value of a fragment is equal (GL_EQUAL)
+//    // to the reference value 1 the fragment passes the test and is drawn, otherwise discarded.
+//    glStencilFunc(GL_NOTEQUAL, 1, 0xFF);
+//    
+//    glStencilOp(GL_KEEP, GL_KEEP, GL_REPLACE);
+//    
+////    glStencilMask(0xFF); // each bit is written to the stencil buffer as is
+////    glStencilMask(0x00); // each bit ends up as 0 in the stencil buffer (disabling writes)
+//    
 //    // build and compile shaders
 //    // -------------------------
-//    Shader ourShader("OpenGL_01/Shaders/SimpleZTest.vert",
-//                            "OpenGL_01/Shaders/SimpleZTest.frag");
+//    Shader ourShader("OpenGL_01/Shaders/ModelLoading.vert",
+//                            "OpenGL_01/Shaders/ModelLoading.frag");
+//    
+//    Shader shaderSingleColor("OpenGL_01/Shaders/SimpleSingleColor.vert",
+//                     "OpenGL_01/Shaders/SimpleSingleColor.frag");
 //    
 //    Shader lampShader("OpenGL_01/Shaders/SimpleLightSource.vert",
 //                     "OpenGL_01/Shaders/SimpleLightSource.frag");
@@ -150,7 +164,29 @@
 //        // render
 //        // ------
 //        glClearColor(0.3f, 0.05f, 0.05f, 1.0f);
-//        glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+//        glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT | GL_STENCIL_BUFFER_BIT);
+//        
+//        // draw the lamp object
+//        
+//        // We set its mask to 0x00 to not write to the stencil buffer.
+//        glStencilMask(0x00);
+//        
+//        lampShader.use();
+//        glm::mat4 projection = glm::perspective(glm::radians(camera.Zoom), (float)SCR_WIDTH / (float)SCR_HEIGHT, 0.1f, 100.0f);
+//        glm::mat4 view = camera.GetViewMatrix();
+//        lampShader.setMat4("projection", projection);
+//        lampShader.setMat4("view", view);
+//        glm::mat4 model;
+//        model = glm::mat4();
+//        model = glm::translate(model, lightPos);
+//        model = glm::scale(model, glm::vec3(0.2f)); // a smaller cube
+//        lampShader.setMat4("model", model);
+//        lampModel.Draw(lampShader);
+//        
+//        // 1st. render pass, draw objects as normal, writing to the stencil buffer
+//        // --------------------------------------------------------------------
+//        glStencilFunc(GL_ALWAYS, 1, 0xFF);
+//        glStencilMask(0xFF);
 //        
 //        // don't forget to enable shader before setting uniforms
 //        ourShader.use();
@@ -176,17 +212,15 @@
 //        ourShader.setVec3("dirLight.ambient",  ambientColor);
 //        ourShader.setVec3("dirLight.diffuse",  diffuseColor);
 //        ourShader.setVec3("dirLight.specular", 1.0f, 1.0f, 1.0f);
-//
+//        
 //        ourShader.setFloat("material.shininess", 64.0f);
 //        
 //        // view/projection transformations
-//        glm::mat4 projection = glm::perspective(glm::radians(camera.Zoom), (float)SCR_WIDTH / (float)SCR_HEIGHT, 0.1f, 100.0f);
-//        glm::mat4 view = camera.GetViewMatrix();
 //        ourShader.setMat4("projection", projection);
 //        ourShader.setMat4("view", view);
 //        
 //        // render the loaded model
-//        glm::mat4 model;
+//        model = glm::mat4();
 //        model = glm::translate(model, glm::vec3(0.0f, -1.75f, 0.0f)); // translate it down so it's at the center of the scene
 //        model = glm::scale(model, glm::vec3(0.2f, 0.2f, 0.2f));	// it's a bit too big for our scene, so scale it down
 //        ourShader.setMat4("model", model);
@@ -198,17 +232,34 @@
 //        ourShader.setMat4("model", model);
 //        ourModel.Draw(ourShader);
 //        
-//        // also draw the lamp object
-//        lampShader.use();
-//        lampShader.setMat4("projection", projection);
-//        lampShader.setMat4("view", view);
-//        model = glm::mat4();
-//        model = glm::translate(model, lightPos);
-//        model = glm::scale(model, glm::vec3(0.2f)); // a smaller cube
-//        lampShader.setMat4("model", model);
-//
-//        lampModel.Draw(lampShader);
+//        // 2nd. render pass: now draw slightly scaled versions of the objects, this time disabling stencil writing.
+//        // Because the stencil buffer is now filled with several 1s. The parts of the buffer that are 1 are not drawn, thus only drawing
+//        // the objects' size differences, making it look like borders.
+//        // -----------------------------------------------------------------------------------------------------------------------------
+//        glStencilFunc(GL_NOTEQUAL, 1, 0xFF);
+//        glStencilMask(0x00);
+//        glDisable(GL_DEPTH_TEST);
+//        shaderSingleColor.use();
+//        float scale = 1.05f;
 //        
+//        shaderSingleColor.setMat4("projection", projection);
+//        shaderSingleColor.setMat4("view", view);
+//        
+//        // render the loaded model
+//        model = glm::mat4();
+//        model = glm::translate(model, glm::vec3(0.0f, -1.75f, 0.0f)); // translate it down so it's at the center of the scene
+//        model = glm::scale(model, glm::vec3(0.2f * scale, 0.2f, 0.2f * scale));
+//        shaderSingleColor.setMat4("model", model);
+//        ourModel.Draw(shaderSingleColor);
+//        
+//        model = glm::mat4();
+//        model = glm::translate(model, glm::vec3(1.0f, -1.75f, -2.0f));
+//        model = glm::scale(model, glm::vec3(0.2f * scale, 0.2f, 0.2f * scale));
+//        shaderSingleColor.setMat4("model", model);
+//        ourModel.Draw(shaderSingleColor);
+//        
+//        glStencilMask(0xFF);
+//        glEnable(GL_DEPTH_TEST);
 //        
 //        // glfw: swap buffers and poll IO events (keys pressed/released, mouse moved etc.)
 //        // -------------------------------------------------------------------------------

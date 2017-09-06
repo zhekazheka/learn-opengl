@@ -13,7 +13,7 @@
 
 // utility function for loading a 2D texture from file
 // ---------------------------------------------------
-unsigned int loadTexture(char const * path)
+unsigned int loadTexture(char const * path, GLenum textureMode = GL_REPEAT)
 {
     unsigned int textureID;
     glGenTextures(1, &textureID);
@@ -34,8 +34,8 @@ unsigned int loadTexture(char const * path)
         glTexImage2D(GL_TEXTURE_2D, 0, format, width, height, 0, format, GL_UNSIGNED_BYTE, data);
         glGenerateMipmap(GL_TEXTURE_2D);
         
-        glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
-        glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
+        glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, textureMode);
+        glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, textureMode);
         glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR_MIPMAP_LINEAR);
         glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
         
@@ -50,7 +50,7 @@ unsigned int loadTexture(char const * path)
     return textureID;
 }
 
-unsigned int textureFromFile(const char *path, const std::string &directory, bool gamma = false)
+unsigned int textureFromFile(const char *path, const std::string &directory, bool gamma = false, GLenum textureMode = GL_REPEAT)
 {
     std::string filename = std::string(path);
     filename = directory + '/' + filename;
@@ -74,8 +74,8 @@ unsigned int textureFromFile(const char *path, const std::string &directory, boo
         glTexImage2D(GL_TEXTURE_2D, 0, format, width, height, 0, format, GL_UNSIGNED_BYTE, data);
         glGenerateMipmap(GL_TEXTURE_2D);
         
-        glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
-        glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
+        glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, textureMode);
+        glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, textureMode);
         glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR_MIPMAP_LINEAR);
         glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
         
