@@ -30,6 +30,7 @@
 		84845B1D1F1D44DF0073978C /* SOIL.c in Sources */ = {isa = PBXBuildFile; fileRef = 84845B161F1D44DF0073978C /* SOIL.c */; };
 		84845B1E1F1D44DF0073978C /* stb_image_aug.c in Sources */ = {isa = PBXBuildFile; fileRef = 84845B171F1D44DF0073978C /* stb_image_aug.c */; };
 		84BB90751F6E942A00D0A447 /* mainCubemaps.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 84BB90741F6E942A00D0A447 /* mainCubemaps.cpp */; };
+		84BB90961F7067C100D0A447 /* mainGLSL.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 84BB90951F7067C100D0A447 /* mainGLSL.cpp */; };
 		84C70B661F5DEFD9006FF65D /* mainDepthTesting.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 84C70B651F5DEFD9006FF65D /* mainDepthTesting.cpp */; };
 		84C70B6A1F5F37FF006FF65D /* mainStencilTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 84C70B691F5F37FF006FF65D /* mainStencilTest.cpp */; };
 		84C70B6E1F6068B6006FF65D /* mainBlending.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 84C70B6D1F6068B6006FF65D /* mainBlending.cpp */; };
@@ -484,6 +485,9 @@
 		84BB90901F70528300D0A447 /* CubemapReflection.vert */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; name = CubemapReflection.vert; path = Shaders/CubemapReflection.vert; sourceTree = "<group>"; };
 		84BB90911F7059D600D0A447 /* CubemapRefraction.frag */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; name = CubemapRefraction.frag; path = Shaders/CubemapRefraction.frag; sourceTree = "<group>"; };
 		84BB90921F7059D600D0A447 /* CubemapRefraction.vert */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; name = CubemapRefraction.vert; path = Shaders/CubemapRefraction.vert; sourceTree = "<group>"; };
+		84BB90931F7067AE00D0A447 /* SimpleUBO.frag */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; name = SimpleUBO.frag; path = Shaders/SimpleUBO.frag; sourceTree = "<group>"; };
+		84BB90941F7067AE00D0A447 /* SimpleUBO.vert */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; name = SimpleUBO.vert; path = Shaders/SimpleUBO.vert; sourceTree = "<group>"; };
+		84BB90951F7067C100D0A447 /* mainGLSL.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = mainGLSL.cpp; sourceTree = "<group>"; };
 		84C70B5C1F5AD6C8006FF65D /* MysteryCup.mtl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = MysteryCup.mtl; sourceTree = "<group>"; };
 		84C70B5D1F5AD6C8006FF65D /* MysteryCup.obj */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = MysteryCup.obj; sourceTree = "<group>"; };
 		84C70B631F5AE28C006FF65D /* ModelLoading.frag */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; name = ModelLoading.frag; path = Shaders/ModelLoading.frag; sourceTree = "<group>"; };
@@ -562,6 +566,8 @@
 				84BB90901F70528300D0A447 /* CubemapReflection.vert */,
 				84BB90911F7059D600D0A447 /* CubemapRefraction.frag */,
 				84BB90921F7059D600D0A447 /* CubemapRefraction.vert */,
+				84BB90931F7067AE00D0A447 /* SimpleUBO.frag */,
+				84BB90941F7067AE00D0A447 /* SimpleUBO.vert */,
 			);
 			name = Shaders;
 			sourceTree = "<group>";
@@ -603,6 +609,7 @@
 				84C70B6D1F6068B6006FF65D /* mainBlending.cpp */,
 				84C70B731F608D95006FF65D /* mainFramebuffers.cpp */,
 				84BB90741F6E942A00D0A447 /* mainCubemaps.cpp */,
+				84BB90951F7067C100D0A447 /* mainGLSL.cpp */,
 				354418C01EA8093B0094EB72 /* shader-loader.h */,
 				35CD1AE71EC66E94001AC9D2 /* camera.h */,
 				35F58DD41F58BBE30094854C /* data.h */,
@@ -1355,6 +1362,7 @@
 				353B70551F2A829E007AFD6A /* mainLighting.cpp in Sources */,
 				84C70B741F608D95006FF65D /* mainFramebuffers.cpp in Sources */,
 				84845B1B1F1D44DF0073978C /* image_DXT.c in Sources */,
+				84BB90961F7067C100D0A447 /* mainGLSL.cpp in Sources */,
 				35F58DA01F58B5D60094854C /* glm.cpp in Sources */,
 				84C70B6A1F5F37FF006FF65D /* mainStencilTest.cpp in Sources */,
 				84BB90751F6E942A00D0A447 /* mainCubemaps.cpp in Sources */,
