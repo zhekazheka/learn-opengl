@@ -101,8 +101,8 @@ int main()
     Shader shaderSkybox("OpenGL_01/Shaders/Cubemap.vert",
                   "OpenGL_01/Shaders/Cubemap.frag");
     
-    Shader shader("OpenGL_01/Shaders/CubemapReflection.vert",
-                  "OpenGL_01/Shaders/CubemapReflection.frag");
+    Shader shader("OpenGL_01/Shaders/CubemapRefraction.vert",
+                  "OpenGL_01/Shaders/CubemapRefraction.frag");
     
     float cubeVertices[] = {
         // positions          // normals           // texture coords
@@ -267,8 +267,6 @@ int main()
         // draw scene as normal
         shader.use();
         glm::mat4 model;
-        model = glm::translate(model, glm::vec3(0.0f, -1.75f, 0.0f)); // translate it down so it's at the center of the scene
-        model = glm::scale(model, glm::vec3(0.2f, 0.2f, 0.2f));	// it's a bit too big for our scene, so scale it down
         glm::mat4 view = camera.GetViewMatrix();
         glm::mat4 projection = glm::perspective(camera.Zoom, (float)SCR_WIDTH / (float)SCR_HEIGHT, 0.1f, 100.0f);
         
@@ -277,11 +275,16 @@ int main()
         shader.setMat4("view", view);
         shader.setMat4("projection", projection);
         // cubes
-//        glBindVertexArray(cubeVAO);
-//        glActiveTexture(GL_TEXTURE0);
-//        glBindTexture(GL_TEXTURE_CUBE_MAP, cubemapTexture);
-//        glDrawArrays(GL_TRIANGLES, 0, 36);
-//        glBindVertexArray(0);
+        glBindVertexArray(cubeVAO);
+        glActiveTexture(GL_TEXTURE0);
+        glBindTexture(GL_TEXTURE_CUBE_MAP, cubemapTexture);
+        glDrawArrays(GL_TRIANGLES, 0, 36);
+        glBindVertexArray(0);
+        
+        model = glm::mat4();
+        model = glm::translate(model, glm::vec3(3.0f, -1.75f, 0.0f)); // translate it down so it's at the center of the scene
+        model = glm::scale(model, glm::vec3(0.2f, 0.2f, 0.2f));	// it's a bit too big for our scene, so scale it down
+        shader.setMat4("model", model);
         ourModel.Draw(shader);
         
         // draw skybox as last

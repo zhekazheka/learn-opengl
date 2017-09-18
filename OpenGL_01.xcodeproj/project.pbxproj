@@ -482,6 +482,8 @@
 		84BB908E1F6EA48700D0A447 /* top.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = top.jpg; sourceTree = "<group>"; };
 		84BB908F1F70528300D0A447 /* CubemapReflection.frag */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; name = CubemapReflection.frag; path = Shaders/CubemapReflection.frag; sourceTree = "<group>"; };
 		84BB90901F70528300D0A447 /* CubemapReflection.vert */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; name = CubemapReflection.vert; path = Shaders/CubemapReflection.vert; sourceTree = "<group>"; };
+		84BB90911F7059D600D0A447 /* CubemapRefraction.frag */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; name = CubemapRefraction.frag; path = Shaders/CubemapRefraction.frag; sourceTree = "<group>"; };
+		84BB90921F7059D600D0A447 /* CubemapRefraction.vert */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; name = CubemapRefraction.vert; path = Shaders/CubemapRefraction.vert; sourceTree = "<group>"; };
 		84C70B5C1F5AD6C8006FF65D /* MysteryCup.mtl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = MysteryCup.mtl; sourceTree = "<group>"; };
 		84C70B5D1F5AD6C8006FF65D /* MysteryCup.obj */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = MysteryCup.obj; sourceTree = "<group>"; };
 		84C70B631F5AE28C006FF65D /* ModelLoading.frag */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; name = ModelLoading.frag; path = Shaders/ModelLoading.frag; sourceTree = "<group>"; };
@@ -558,6 +560,8 @@
 				84C70B761F608F8E006FF65D /* ScreenSimple.vert */,
 				84BB908F1F70528300D0A447 /* CubemapReflection.frag */,
 				84BB90901F70528300D0A447 /* CubemapReflection.vert */,
+				84BB90911F7059D600D0A447 /* CubemapRefraction.frag */,
+				84BB90921F7059D600D0A447 /* CubemapRefraction.vert */,
 			);
 			name = Shaders;
 			sourceTree = "<group>";
