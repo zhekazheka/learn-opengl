@@ -34,6 +34,8 @@
 		84A0F84A1F71B26F007361A6 /* mainGeometryShader3.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 84A0F8491F71B26F007361A6 /* mainGeometryShader3.cpp */; };
 		84A0F84C1F72EFA0007361A6 /* mainInstancing.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 84A0F84B1F72EFA0007361A6 /* mainInstancing.cpp */; };
 		84A0F8521F72F3AE007361A6 /* mainInstancing2.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 84A0F8511F72F3AE007361A6 /* mainInstancing2.cpp */; };
+		84A0F85E1F72F6DC007361A6 /* mainInstancing3.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 84A0F85D1F72F6DC007361A6 /* mainInstancing3.cpp */; };
+		84A0F8621F72FAED007361A6 /* mainInstancing4.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 84A0F8611F72FAED007361A6 /* mainInstancing4.cpp */; };
 		84BB90751F6E942A00D0A447 /* mainCubemaps.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 84BB90741F6E942A00D0A447 /* mainCubemaps.cpp */; };
 		84BB90961F7067C100D0A447 /* mainGLSL.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 84BB90951F7067C100D0A447 /* mainGLSL.cpp */; };
 		84C70B661F5DEFD9006FF65D /* mainDepthTesting.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 84C70B651F5DEFD9006FF65D /* mainDepthTesting.cpp */; };
@@ -483,6 +485,18 @@
 		84A0F84F1F72F39A007361A6 /* Instancing2.frag */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; name = Instancing2.frag; path = Shaders/Instancing2.frag; sourceTree = "<group>"; };
 		84A0F8501F72F39A007361A6 /* Instancing2.vert */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; name = Instancing2.vert; path = Shaders/Instancing2.vert; sourceTree = "<group>"; };
 		84A0F8511F72F3AE007361A6 /* mainInstancing2.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = mainInstancing2.cpp; sourceTree = "<group>"; };
+		84A0F8541F72F6AA007361A6 /* planet.mtl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = planet.mtl; sourceTree = "<group>"; };
+		84A0F8551F72F6AA007361A6 /* planet.obj */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = planet.obj; sourceTree = "<group>"; };
+		84A0F8561F72F6AA007361A6 /* planet_Quom1200.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = planet_Quom1200.png; sourceTree = "<group>"; };
+		84A0F8581F72F6AA007361A6 /* Rock-Texture-Surface.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Rock-Texture-Surface.jpg"; sourceTree = "<group>"; };
+		84A0F8591F72F6AA007361A6 /* rock.mtl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = rock.mtl; sourceTree = "<group>"; };
+		84A0F85A1F72F6AA007361A6 /* rock.obj */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = rock.obj; sourceTree = "<group>"; };
+		84A0F85B1F72F6D2007361A6 /* Instancing3.frag */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; name = Instancing3.frag; path = Shaders/Instancing3.frag; sourceTree = "<group>"; };
+		84A0F85C1F72F6D2007361A6 /* Instancing3.vert */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; name = Instancing3.vert; path = Shaders/Instancing3.vert; sourceTree = "<group>"; };
+		84A0F85D1F72F6DC007361A6 /* mainInstancing3.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = mainInstancing3.cpp; sourceTree = "<group>"; };
+		84A0F85F1F72FAD2007361A6 /* Instancing4.frag */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; name = Instancing4.frag; path = Shaders/Instancing4.frag; sourceTree = "<group>"; };
+		84A0F8601F72FAD2007361A6 /* Instancing4.vert */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; name = Instancing4.vert; path = Shaders/Instancing4.vert; sourceTree = "<group>"; };
+		84A0F8611F72FAED007361A6 /* mainInstancing4.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = mainInstancing4.cpp; sourceTree = "<group>"; };
 		84BB90741F6E942A00D0A447 /* mainCubemaps.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = mainCubemaps.cpp; sourceTree = "<group>"; };
 		84BB90791F6E977B00D0A447 /* back.tga */ = {isa = PBXFileReference; lastKnownFileType = file; path = back.tga; sourceTree = "<group>"; };
 		84BB907A1F6E977B00D0A447 /* bottom.tga */ = {isa = PBXFileReference; lastKnownFileType = file; path = bottom.tga; sourceTree = "<group>"; };
@@ -604,6 +618,10 @@
 				84A0F84E1F72F07E007361A6 /* Instancing.vert */,
 				84A0F84F1F72F39A007361A6 /* Instancing2.frag */,
 				84A0F8501F72F39A007361A6 /* Instancing2.vert */,
+				84A0F85B1F72F6D2007361A6 /* Instancing3.frag */,
+				84A0F85C1F72F6D2007361A6 /* Instancing3.vert */,
+				84A0F85F1F72FAD2007361A6 /* Instancing4.frag */,
+				84A0F8601F72FAD2007361A6 /* Instancing4.vert */,
 			);
 			name = Shaders;
 			sourceTree = "<group>";
@@ -651,6 +669,8 @@
 				84A0F8491F71B26F007361A6 /* mainGeometryShader3.cpp */,
 				84A0F84B1F72EFA0007361A6 /* mainInstancing.cpp */,
 				84A0F8511F72F3AE007361A6 /* mainInstancing2.cpp */,
+				84A0F85D1F72F6DC007361A6 /* mainInstancing3.cpp */,
+				84A0F8611F72FAED007361A6 /* mainInstancing4.cpp */,
 				354418C01EA8093B0094EB72 /* shader-loader.h */,
 				35CD1AE71EC66E94001AC9D2 /* camera.h */,
 				35F58DD41F58BBE30094854C /* data.h */,
@@ -1152,6 +1172,8 @@
 		35F58DDB1F58CBFB0094854C /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				84A0F8531F72F6AA007361A6 /* planet */,
+				84A0F8571F72F6AA007361A6 /* rock */,
 				84C70B5B1F5AD6C8006FF65D /* MysteryCup */,
 				35F58E031F58D9B90094854C /* 313_cassina__lc2_armchair */,
 				35F58DDC1F58CBFB0094854C /* nanosuit */,
@@ -1266,6 +1288,26 @@
 				84845AFA1F1D40130073978C /* SOIL.h */,
 			);
 			path = src;
+			sourceTree = "<group>";
+		};
+		84A0F8531F72F6AA007361A6 /* planet */ = {
+			isa = PBXGroup;
+			children = (
+				84A0F8541F72F6AA007361A6 /* planet.mtl */,
+				84A0F8551F72F6AA007361A6 /* planet.obj */,
+				84A0F8561F72F6AA007361A6 /* planet_Quom1200.png */,
+			);
+			path = planet;
+			sourceTree = "<group>";
+		};
+		84A0F8571F72F6AA007361A6 /* rock */ = {
+			isa = PBXGroup;
+			children = (
+				84A0F8581F72F6AA007361A6 /* Rock-Texture-Surface.jpg */,
+				84A0F8591F72F6AA007361A6 /* rock.mtl */,
+				84A0F85A1F72F6AA007361A6 /* rock.obj */,
+			);
+			path = rock;
 			sourceTree = "<group>";
 		};
 		84BB90761F6E977B00D0A447 /* Cubemaps */ = {
@@ -1395,6 +1437,7 @@
 				84845B1C1F1D44DF0073978C /* image_helper.c in Sources */,
 				3506034C1F3B9E3600DB31B6 /* mainDirectionalLight.cpp in Sources */,
 				3526EBCD1F422B9E00186CF1 /* mainSpotLight.cpp in Sources */,
+				84A0F85E1F72F6DC007361A6 /* mainInstancing3.cpp in Sources */,
 				35C436DE1F3902DC00D9BE10 /* mainLightingMaps.cpp in Sources */,
 				84C70B661F5DEFD9006FF65D /* mainDepthTesting.cpp in Sources */,
 				35035DD21F436B220043B9EA /* mainSeveralLights.cpp in Sources */,
@@ -1402,6 +1445,7 @@
 				350603521F3BA90C00DB31B6 /* mainPointLight.cpp in Sources */,
 				353B70551F2A829E007AFD6A /* mainLighting.cpp in Sources */,
 				84C70B741F608D95006FF65D /* mainFramebuffers.cpp in Sources */,
+				84A0F8621F72FAED007361A6 /* mainInstancing4.cpp in Sources */,
 				84845B1B1F1D44DF0073978C /* image_DXT.c in Sources */,
 				84A0F8451F71A78B007361A6 /* mainGeometryShader2.cpp in Sources */,
 				84BB90961F7067C100D0A447 /* mainGLSL.cpp in Sources */,

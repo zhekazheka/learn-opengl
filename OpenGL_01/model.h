@@ -19,6 +19,9 @@
 class Model
 {
 public:
+    std::vector<Mesh> meshes;
+    std::vector<Texture> textures_loaded;
+    
     /*  Functions   */
     Model(char *path)
     {
@@ -34,9 +37,7 @@ public:
     }
 private:
     /*  Model Data  */
-    std::vector<Mesh> meshes;
     std::string directory;
-    std::vector<Texture> textures_loaded;
     
     /*  Functions   */
     void loadModel(std::string path)
@@ -133,7 +134,9 @@ private:
         {
             aiFace face = mesh->mFaces[i];
             for(unsigned int j = 0; j < face.mNumIndices; ++j)
+            {
                 indices.push_back(face.mIndices[j]);
+            }
         }
         
         // process material
