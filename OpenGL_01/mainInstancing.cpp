@@ -98,30 +98,58 @@
 //    
 //    // build and compile shaders
 //    // -------------------------
-//    Shader shader("OpenGL_01/Shaders/SimpleGeometry.vert",
-//                  "OpenGL_01/Shaders/SimpleGeometry.frag",
-//                  "OpenGL_01/Shaders/SimpleGeometry.geom");
+//    Shader shader("OpenGL_01/Shaders/Instancing.vert",
+//                  "OpenGL_01/Shaders/Instancing.frag");
 //    
-//    float points[] = {
-//        -0.5f,  0.5f, 1.0f, 0.0f, 0.0f, // top-left
-//        0.5f,  0.5f, 0.0f, 1.0f, 0.0f, // top-right
-//        0.5f, -0.5f, 0.0f, 0.0f, 1.0f, // bottom-right
-//        -0.5f, -0.5f, 1.0f, 1.0f, 0.0f  // bottom-left
+//    float quadVertices[] = {
+//        // positions     // colors
+//        -0.05f,  0.05f,  1.0f, 0.0f, 0.0f,
+//        0.05f, -0.05f,  0.0f, 1.0f, 0.0f,
+//        -0.05f, -0.05f,  0.0f, 0.0f, 1.0f,
+//        
+//        -0.05f,  0.05f,  1.0f, 0.0f, 0.0f,
+//        0.05f, -0.05f,  0.0f, 1.0f, 0.0f,
+//        0.05f,  0.05f,  0.0f, 1.0f, 1.0f
 //    };
 //    
 //    // cube VAO
-//    unsigned int pointsVAO, pointsVBO;
-//    glGenVertexArrays(1, &pointsVAO);
-//    glGenBuffers(1, &pointsVBO);
-//    glBindVertexArray(pointsVAO);
-//    glBindBuffer(GL_ARRAY_BUFFER, pointsVBO);
-//    glBufferData(GL_ARRAY_BUFFER, sizeof(points), &points, GL_STATIC_DRAW);
+//    unsigned int quadVAO, quadVBO;
+//    glGenVertexArrays(1, &quadVAO);
+//    glGenBuffers(1, &quadVBO);
+//    glBindVertexArray(quadVAO);
+//    glBindBuffer(GL_ARRAY_BUFFER, quadVBO);
+//    glBufferData(GL_ARRAY_BUFFER, sizeof(quadVertices), &quadVertices, GL_STATIC_DRAW);
 //    glEnableVertexAttribArray(0);
 //    glVertexAttribPointer(0, 2, GL_FLOAT, GL_FALSE, 5 * sizeof(float), (void*)0);
 //    glEnableVertexAttribArray(1);
 //    glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, 5 * sizeof(float), (void*)(2 * sizeof(float)));
 //    
 ////    glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
+//    
+//    
+//    glm::vec2 translations[100];
+//    int index = 0;
+//    float offset = 0.1f;
+//    for(int y = -10; y < 10; y += 2)
+//    {
+//        for(int x = -10; x < 10; x += 2)
+//        {
+//            glm::vec2 translation;
+//            translation.x = (float)x / 10.0f + offset;
+//            translation.y = (float)y / 10.0f + offset;
+//            translations[index++] = translation;
+//        }
+//    }
+//    
+//    shader.use();
+//    for(unsigned int i = 0; i < 100; i++)
+//    {
+//        std::stringstream ss;
+//        std::string index;
+//        ss << i;
+//        index = ss.str();
+//        shader.setVec2(("offsets[" + index + "]").c_str(), translations[i]);
+//    }
 //    
 //    // render loop
 //    // -----------
@@ -143,8 +171,8 @@
 //        glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 //        
 //        shader.use();
-//        glBindVertexArray(pointsVAO);
-//        glDrawArrays(GL_POINTS, 0, 4);
+//        glBindVertexArray(quadVAO);
+//        glDrawArraysInstanced(GL_TRIANGLES, 0, 6, 100);
 //        
 //        // glfw: swap buffers and poll IO events (keys pressed/released, mouse moved etc.)
 //        // -------------------------------------------------------------------------------
@@ -154,8 +182,8 @@
 //    
 //    // optional: de-allocate all resources once they've outlived their purpose:
 //    // ------------------------------------------------------------------------
-//    glDeleteVertexArrays(1, &pointsVAO);
-//    glDeleteBuffers(1, &pointsVBO);
+//    glDeleteVertexArrays(1, &quadVAO);
+//    glDeleteBuffers(1, &quadVBO);
 //    
 //    
 //    // glfw: terminate, clearing all previously allocated GLFW resources.
