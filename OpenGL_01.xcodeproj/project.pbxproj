@@ -29,6 +29,9 @@
 		84845B1C1F1D44DF0073978C /* image_helper.c in Sources */ = {isa = PBXBuildFile; fileRef = 84845B141F1D44DF0073978C /* image_helper.c */; };
 		84845B1D1F1D44DF0073978C /* SOIL.c in Sources */ = {isa = PBXBuildFile; fileRef = 84845B161F1D44DF0073978C /* SOIL.c */; };
 		84845B1E1F1D44DF0073978C /* stb_image_aug.c in Sources */ = {isa = PBXBuildFile; fileRef = 84845B171F1D44DF0073978C /* stb_image_aug.c */; };
+		84A0F83D1F719CA9007361A6 /* mainGeometryShader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 84A0F83C1F719CA9007361A6 /* mainGeometryShader.cpp */; };
+		84A0F8451F71A78B007361A6 /* mainGeometryShader2.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 84A0F8441F71A78B007361A6 /* mainGeometryShader2.cpp */; };
+		84A0F84A1F71B26F007361A6 /* mainGeometryShader3.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 84A0F8491F71B26F007361A6 /* mainGeometryShader3.cpp */; };
 		84BB90751F6E942A00D0A447 /* mainCubemaps.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 84BB90741F6E942A00D0A447 /* mainCubemaps.cpp */; };
 		84BB90961F7067C100D0A447 /* mainGLSL.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 84BB90951F7067C100D0A447 /* mainGLSL.cpp */; };
 		84C70B661F5DEFD9006FF65D /* mainDepthTesting.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 84C70B651F5DEFD9006FF65D /* mainDepthTesting.cpp */; };
@@ -460,6 +463,18 @@
 		84845B181F1D44DF0073978C /* stb_image_aug.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = stb_image_aug.h; sourceTree = "<group>"; };
 		84845B191F1D44DF0073978C /* stbi_DDS_aug_c.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = stbi_DDS_aug_c.h; sourceTree = "<group>"; };
 		84845B1A1F1D44DF0073978C /* stbi_DDS_aug.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = stbi_DDS_aug.h; sourceTree = "<group>"; };
+		84A0F83C1F719CA9007361A6 /* mainGeometryShader.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = mainGeometryShader.cpp; sourceTree = "<group>"; };
+		84A0F83E1F719CC5007361A6 /* SimpleGeometry.frag */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; name = SimpleGeometry.frag; path = Shaders/SimpleGeometry.frag; sourceTree = "<group>"; };
+		84A0F83F1F719CC5007361A6 /* SimpleGeometry.vert */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; name = SimpleGeometry.vert; path = Shaders/SimpleGeometry.vert; sourceTree = "<group>"; };
+		84A0F8401F719F16007361A6 /* SimpleGeometry.geom */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; name = SimpleGeometry.geom; path = Shaders/SimpleGeometry.geom; sourceTree = "<group>"; };
+		84A0F8411F71A733007361A6 /* ModelLoading2.frag */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; name = ModelLoading2.frag; path = Shaders/ModelLoading2.frag; sourceTree = "<group>"; };
+		84A0F8421F71A733007361A6 /* ModelLoading2.geom */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; name = ModelLoading2.geom; path = Shaders/ModelLoading2.geom; sourceTree = "<group>"; };
+		84A0F8431F71A733007361A6 /* ModelLoading2.vert */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; name = ModelLoading2.vert; path = Shaders/ModelLoading2.vert; sourceTree = "<group>"; };
+		84A0F8441F71A78B007361A6 /* mainGeometryShader2.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = mainGeometryShader2.cpp; sourceTree = "<group>"; };
+		84A0F8461F71B13E007361A6 /* NormalVisualizing.frag */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; name = NormalVisualizing.frag; path = Shaders/NormalVisualizing.frag; sourceTree = "<group>"; };
+		84A0F8471F71B13E007361A6 /* NormalVisualizing.geom */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; name = NormalVisualizing.geom; path = Shaders/NormalVisualizing.geom; sourceTree = "<group>"; };
+		84A0F8481F71B13E007361A6 /* NormalVisualizing.vert */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; name = NormalVisualizing.vert; path = Shaders/NormalVisualizing.vert; sourceTree = "<group>"; };
+		84A0F8491F71B26F007361A6 /* mainGeometryShader3.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = mainGeometryShader3.cpp; sourceTree = "<group>"; };
 		84BB90741F6E942A00D0A447 /* mainCubemaps.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = mainCubemaps.cpp; sourceTree = "<group>"; };
 		84BB90791F6E977B00D0A447 /* back.tga */ = {isa = PBXFileReference; lastKnownFileType = file; path = back.tga; sourceTree = "<group>"; };
 		84BB907A1F6E977B00D0A447 /* bottom.tga */ = {isa = PBXFileReference; lastKnownFileType = file; path = bottom.tga; sourceTree = "<group>"; };
@@ -568,6 +583,15 @@
 				84BB90921F7059D600D0A447 /* CubemapRefraction.vert */,
 				84BB90931F7067AE00D0A447 /* SimpleUBO.frag */,
 				84BB90941F7067AE00D0A447 /* SimpleUBO.vert */,
+				84A0F83E1F719CC5007361A6 /* SimpleGeometry.frag */,
+				84A0F8401F719F16007361A6 /* SimpleGeometry.geom */,
+				84A0F83F1F719CC5007361A6 /* SimpleGeometry.vert */,
+				84A0F8411F71A733007361A6 /* ModelLoading2.frag */,
+				84A0F8421F71A733007361A6 /* ModelLoading2.geom */,
+				84A0F8431F71A733007361A6 /* ModelLoading2.vert */,
+				84A0F8461F71B13E007361A6 /* NormalVisualizing.frag */,
+				84A0F8471F71B13E007361A6 /* NormalVisualizing.geom */,
+				84A0F8481F71B13E007361A6 /* NormalVisualizing.vert */,
 			);
 			name = Shaders;
 			sourceTree = "<group>";
@@ -610,6 +634,9 @@
 				84C70B731F608D95006FF65D /* mainFramebuffers.cpp */,
 				84BB90741F6E942A00D0A447 /* mainCubemaps.cpp */,
 				84BB90951F7067C100D0A447 /* mainGLSL.cpp */,
+				84A0F83C1F719CA9007361A6 /* mainGeometryShader.cpp */,
+				84A0F8441F71A78B007361A6 /* mainGeometryShader2.cpp */,
+				84A0F8491F71B26F007361A6 /* mainGeometryShader3.cpp */,
 				354418C01EA8093B0094EB72 /* shader-loader.h */,
 				35CD1AE71EC66E94001AC9D2 /* camera.h */,
 				35F58DD41F58BBE30094854C /* data.h */,
@@ -1362,7 +1389,9 @@
 				353B70551F2A829E007AFD6A /* mainLighting.cpp in Sources */,
 				84C70B741F608D95006FF65D /* mainFramebuffers.cpp in Sources */,
 				84845B1B1F1D44DF0073978C /* image_DXT.c in Sources */,
+				84A0F8451F71A78B007361A6 /* mainGeometryShader2.cpp in Sources */,
 				84BB90961F7067C100D0A447 /* mainGLSL.cpp in Sources */,
+				84A0F83D1F719CA9007361A6 /* mainGeometryShader.cpp in Sources */,
 				35F58DA01F58B5D60094854C /* glm.cpp in Sources */,
 				84C70B6A1F5F37FF006FF65D /* mainStencilTest.cpp in Sources */,
 				84BB90751F6E942A00D0A447 /* mainCubemaps.cpp in Sources */,
@@ -1370,6 +1399,7 @@
 				84845B1D1F1D44DF0073978C /* SOIL.c in Sources */,
 				35F58DD31F58BB9C0094854C /* mainObjectLoading.cpp in Sources */,
 				35A0C1E11EA3859E006C34AF /* main.cpp in Sources */,
+				84A0F84A1F71B26F007361A6 /* mainGeometryShader3.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
