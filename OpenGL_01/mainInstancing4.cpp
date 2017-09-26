@@ -106,12 +106,13 @@ int main()
     
 //    glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
     
-    unsigned int amount = 23000;
+    unsigned int amount = 3000;
     glm::mat4 *modelMatrices;
     modelMatrices = new glm::mat4[amount];
     srand(glfwGetTime()); // initialize random seed
-    float radius = 50.0;
+    float radius = 1.0;
     float offset = 2.5f;
+    float displacementY = (rand() % (int)(2 * offset * 100)) / 100.0f - offset;
     for(unsigned int i = 0; i < amount; i++)
     {
         glm::mat4 model;
@@ -119,8 +120,7 @@ int main()
         float angle = (float)i / (float)amount * 360.0f;
         float displacement = (rand() % (int)(2 * offset * 100)) / 100.0f - offset;
         float x = sin(angle) * radius + displacement;
-        displacement = (rand() % (int)(2 * offset * 100)) / 100.0f - offset;
-        float y = displacement * 0.4f; // keep height of field smaller compared to width of x and z
+        float y = displacementY * 0.4f; // keep height of field smaller compared to width of x and z
         displacement = (rand() % (int)(2 * offset * 100)) / 100.0f - offset;
         float z = cos(angle) * radius + displacement;
         model = glm::translate(model, glm::vec3(x, y, z));
@@ -171,6 +171,9 @@ int main()
         glBindVertexArray(0);
     }
     
+    float angle = 0.0f;
+    float rotationSpeed = 1.0f;
+    
     // render loop
     // -----------
     while (!glfwWindowShouldClose(window))
@@ -184,6 +187,17 @@ int main()
         // input
         // -----
         doMovement();
+        
+        float x = radius * sin(angle);
+        float y = displacementY;
+        float z = radius * cos(angle);
+        angle += rotationSpeed * deltaTime;
+        if(angle >= 360.0f)
+        {
+            angle = 0.0f;
+        }
+        
+        std::cout << "pos: " << x << " " << z << std::endl;
         
         // render
         // ------
@@ -209,9 +223,22 @@ int main()
         rockShader.setInt("texture_diffuse1", 0);
         glActiveTexture(GL_TEXTURE0);
         glBindTexture(GL_TEXTURE_2D, rockModel.textures_loaded[0].id); // note: we also made the textures_loaded vector public (instead of private) from the model class.
+        
         for (unsigned int i = 0; i < rockModel.meshes.size(); i++)
         {
             glBindVertexArray(rockModel.meshes[i].VAO);
+            
+            for(int j = 0; j < amount; ++j)
+            {
+//                glm::mat4 model(1);
+//                model = glm::translate(model, glm::vec3(x, y, z));
+//                modelMatrices[j] += model;
+                modelMatrices[j] = glm::translate(modelMatrices[j], glm::vec3(x, y, z));
+            }
+            
+//            modelMatrices[i] = glm::translate(modelMatrices[i], glm::vec3(x, y, z));
+            glBufferSubData(GL_ARRAY_BUFFER, 0, amount * sizeof(glm::mat4), &modelMatrices[0]);
+            
             glDrawElementsInstanced(GL_TRIANGLES, rockModel.meshes[i].indices.size(), GL_UNSIGNED_INT, 0, amount);
             glBindVertexArray(0);
         }
