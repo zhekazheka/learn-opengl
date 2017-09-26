@@ -24,6 +24,8 @@
 		35F58C571F58B47F0094854C /* libglfw.3.2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 35F58C511F58B47F0094854C /* libglfw.3.2.dylib */; };
 		35F58DA01F58B5D60094854C /* glm.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 35F58CB51F58B5D60094854C /* glm.cpp */; };
 		35F58DD31F58BB9C0094854C /* mainObjectLoading.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 35F58DD21F58BB9C0094854C /* mainObjectLoading.cpp */; };
+		8402BC871F7AD0AC00D97CB6 /* mainAntiAliasing.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8402BC861F7AD0AC00D97CB6 /* mainAntiAliasing.cpp */; };
+		8402BC8B1F7AD6E400D97CB6 /* mainAntiAliasing2.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8402BC8A1F7AD6E400D97CB6 /* mainAntiAliasing2.cpp */; };
 		84845B081F1D40260073978C /* libSOIL.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 84845AF01F1D40130073978C /* libSOIL.a */; };
 		84845B1B1F1D44DF0073978C /* image_DXT.c in Sources */ = {isa = PBXBuildFile; fileRef = 84845B121F1D44DF0073978C /* image_DXT.c */; };
 		84845B1C1F1D44DF0073978C /* image_helper.c in Sources */ = {isa = PBXBuildFile; fileRef = 84845B141F1D44DF0073978C /* image_helper.c */; };
@@ -456,6 +458,10 @@
 		35FDB0BD1EA934CE00A51757 /* libSOIL.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libSOIL.a; path = ../../../../../../../usr/local/lib/libSOIL.a; sourceTree = "<group>"; };
 		35FDB0BF1EA935AF00A51757 /* container.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = container.jpg; sourceTree = "<group>"; };
 		35FDB0C01EA935AF00A51757 /* wall.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = wall.jpg; sourceTree = "<group>"; };
+		8402BC861F7AD0AC00D97CB6 /* mainAntiAliasing.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = mainAntiAliasing.cpp; sourceTree = "<group>"; };
+		8402BC881F7AD26000D97CB6 /* SimpleColor.frag */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; name = SimpleColor.frag; path = Shaders/SimpleColor.frag; sourceTree = "<group>"; };
+		8402BC891F7AD26000D97CB6 /* SimpleColor.vert */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; name = SimpleColor.vert; path = Shaders/SimpleColor.vert; sourceTree = "<group>"; };
+		8402BC8A1F7AD6E400D97CB6 /* mainAntiAliasing2.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = mainAntiAliasing2.cpp; sourceTree = "<group>"; };
 		84845AF01F1D40130073978C /* libSOIL.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libSOIL.a; sourceTree = "<group>"; };
 		84845AFA1F1D40130073978C /* SOIL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SOIL.h; sourceTree = "<group>"; };
 		84845B121F1D44DF0073978C /* image_DXT.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = image_DXT.c; sourceTree = "<group>"; };
@@ -595,6 +601,8 @@
 				353B70531F2A8072007AFD6A /* BasePhong.vert */,
 				84C70B6F1F606946006FF65D /* SimpleBlending.frag */,
 				84C70B701F606946006FF65D /* SimpleBlending.vert */,
+				8402BC881F7AD26000D97CB6 /* SimpleColor.frag */,
+				8402BC891F7AD26000D97CB6 /* SimpleColor.vert */,
 				354418C21EA80B870094EB72 /* Simple.vert */,
 				354418C31EA80BB70094EB72 /* Simple.frag */,
 				84C70B751F608F8E006FF65D /* ScreenSimple.frag */,
@@ -671,6 +679,8 @@
 				84A0F8511F72F3AE007361A6 /* mainInstancing2.cpp */,
 				84A0F85D1F72F6DC007361A6 /* mainInstancing3.cpp */,
 				84A0F8611F72FAED007361A6 /* mainInstancing4.cpp */,
+				8402BC861F7AD0AC00D97CB6 /* mainAntiAliasing.cpp */,
+				8402BC8A1F7AD6E400D97CB6 /* mainAntiAliasing2.cpp */,
 				354418C01EA8093B0094EB72 /* shader-loader.h */,
 				35CD1AE71EC66E94001AC9D2 /* camera.h */,
 				35F58DD41F58BBE30094854C /* data.h */,
@@ -1433,6 +1443,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8402BC8B1F7AD6E400D97CB6 /* mainAntiAliasing2.cpp in Sources */,
 				84C70B6E1F6068B6006FF65D /* mainBlending.cpp in Sources */,
 				84845B1C1F1D44DF0073978C /* image_helper.c in Sources */,
 				3506034C1F3B9E3600DB31B6 /* mainDirectionalLight.cpp in Sources */,
@@ -1455,6 +1466,7 @@
 				84C70B6A1F5F37FF006FF65D /* mainStencilTest.cpp in Sources */,
 				84BB90751F6E942A00D0A447 /* mainCubemaps.cpp in Sources */,
 				84A0F8521F72F3AE007361A6 /* mainInstancing2.cpp in Sources */,
+				8402BC871F7AD0AC00D97CB6 /* mainAntiAliasing.cpp in Sources */,
 				35C436DC1F38FB0800D9BE10 /* mainMaterial.cpp in Sources */,
 				84845B1D1F1D44DF0073978C /* SOIL.c in Sources */,
 				35F58DD31F58BB9C0094854C /* mainObjectLoading.cpp in Sources */,

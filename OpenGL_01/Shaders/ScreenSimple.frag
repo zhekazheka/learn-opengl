@@ -34,11 +34,11 @@ void main()
          );
     
     // sharpen kernel effect
-    float kernel[9] = float[](
-          0, -1, 0,
-          -1,  5, -1,
-          0, -1, 0
-          );
+//    float kernel[9] = float[](
+//          0, -1, 0,
+//          -1,  5, -1,
+//          0, -1, 0
+//          );
     
     // edge detection
 //    float kernel[9] = float[](
@@ -48,11 +48,11 @@ void main()
 //          );
     
     // blur
-//    float kernel[9] = float[](
-//          1.0 / 16, 2.0 / 16, 1.0 / 16,
-//          2.0 / 16, 4.0 / 16, 2.0 / 16,
-//          1.0 / 16, 2.0 / 16, 1.0 / 16  
-//          );
+    float kernel[9] = float[](
+          1.0 / 16, 2.0 / 16, 1.0 / 16,
+          2.0 / 16, 4.0 / 16, 2.0 / 16,
+          1.0 / 16, 2.0 / 16, 1.0 / 16  
+          );
 
     
     vec3 sampleTex[9];
