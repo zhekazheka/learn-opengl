@@ -26,6 +26,7 @@
 		35F58DD31F58BB9C0094854C /* mainObjectLoading.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 35F58DD21F58BB9C0094854C /* mainObjectLoading.cpp */; };
 		8402BC871F7AD0AC00D97CB6 /* mainAntiAliasing.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8402BC861F7AD0AC00D97CB6 /* mainAntiAliasing.cpp */; };
 		8402BC8B1F7AD6E400D97CB6 /* mainAntiAliasing2.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8402BC8A1F7AD6E400D97CB6 /* mainAntiAliasing2.cpp */; };
+		8402BC8E1F7C24E100D97CB6 /* mainBlinnPhong.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8402BC8D1F7C24E100D97CB6 /* mainBlinnPhong.cpp */; };
 		84845B081F1D40260073978C /* libSOIL.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 84845AF01F1D40130073978C /* libSOIL.a */; };
 		84845B1B1F1D44DF0073978C /* image_DXT.c in Sources */ = {isa = PBXBuildFile; fileRef = 84845B121F1D44DF0073978C /* image_DXT.c */; };
 		84845B1C1F1D44DF0073978C /* image_helper.c in Sources */ = {isa = PBXBuildFile; fileRef = 84845B141F1D44DF0073978C /* image_helper.c */; };
@@ -462,6 +463,10 @@
 		8402BC881F7AD26000D97CB6 /* SimpleColor.frag */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; name = SimpleColor.frag; path = Shaders/SimpleColor.frag; sourceTree = "<group>"; };
 		8402BC891F7AD26000D97CB6 /* SimpleColor.vert */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; name = SimpleColor.vert; path = Shaders/SimpleColor.vert; sourceTree = "<group>"; };
 		8402BC8A1F7AD6E400D97CB6 /* mainAntiAliasing2.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = mainAntiAliasing2.cpp; sourceTree = "<group>"; };
+		8402BC8C1F7C249700D97CB6 /* wood.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wood.png; sourceTree = "<group>"; };
+		8402BC8D1F7C24E100D97CB6 /* mainBlinnPhong.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = mainBlinnPhong.cpp; sourceTree = "<group>"; };
+		8402BC911F7C287000D97CB6 /* BlinnPhong.frag */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = BlinnPhong.frag; sourceTree = "<group>"; };
+		8402BC921F7C287000D97CB6 /* BlinnPhong.vert */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = BlinnPhong.vert; sourceTree = "<group>"; };
 		84845AF01F1D40130073978C /* libSOIL.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libSOIL.a; sourceTree = "<group>"; };
 		84845AFA1F1D40130073978C /* SOIL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SOIL.h; sourceTree = "<group>"; };
 		84845B121F1D44DF0073978C /* image_DXT.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = image_DXT.c; sourceTree = "<group>"; };
@@ -573,6 +578,7 @@
 		355DCF181EA6BC770029CD24 /* Shaders */ = {
 			isa = PBXGroup;
 			children = (
+				8402BC8F1F7C287000D97CB6 /* AdvanceLighting */,
 				84BB90861F6E994900D0A447 /* Cubemap.frag */,
 				84BB90871F6E994900D0A447 /* Cubemap.vert */,
 				84C70B6B1F5F3A38006FF65D /* SimpleSingleColor.frag */,
@@ -681,6 +687,7 @@
 				84A0F8611F72FAED007361A6 /* mainInstancing4.cpp */,
 				8402BC861F7AD0AC00D97CB6 /* mainAntiAliasing.cpp */,
 				8402BC8A1F7AD6E400D97CB6 /* mainAntiAliasing2.cpp */,
+				8402BC8D1F7C24E100D97CB6 /* mainBlinnPhong.cpp */,
 				354418C01EA8093B0094EB72 /* shader-loader.h */,
 				35CD1AE71EC66E94001AC9D2 /* camera.h */,
 				35F58DD41F58BBE30094854C /* data.h */,
@@ -1252,8 +1259,27 @@
 				3506034A1F3B98BE00DB31B6 /* matrix.jpg */,
 				35FDB0C01EA935AF00A51757 /* wall.jpg */,
 				84C70B721F607550006FF65D /* blending_transparent_window.png */,
+				8402BC8C1F7C249700D97CB6 /* wood.png */,
 			);
 			path = Textures;
+			sourceTree = "<group>";
+		};
+		8402BC8F1F7C287000D97CB6 /* AdvanceLighting */ = {
+			isa = PBXGroup;
+			children = (
+				8402BC901F7C287000D97CB6 /* 01 */,
+			);
+			name = AdvanceLighting;
+			path = Shaders/AdvanceLighting;
+			sourceTree = "<group>";
+		};
+		8402BC901F7C287000D97CB6 /* 01 */ = {
+			isa = PBXGroup;
+			children = (
+				8402BC911F7C287000D97CB6 /* BlinnPhong.frag */,
+				8402BC921F7C287000D97CB6 /* BlinnPhong.vert */,
+			);
+			path = 01;
 			sourceTree = "<group>";
 		};
 		84845AED1F1D40130073978C /* Libraries */ = {
@@ -1446,6 +1472,7 @@
 				8402BC8B1F7AD6E400D97CB6 /* mainAntiAliasing2.cpp in Sources */,
 				84C70B6E1F6068B6006FF65D /* mainBlending.cpp in Sources */,
 				84845B1C1F1D44DF0073978C /* image_helper.c in Sources */,
+				8402BC8E1F7C24E100D97CB6 /* mainBlinnPhong.cpp in Sources */,
 				3506034C1F3B9E3600DB31B6 /* mainDirectionalLight.cpp in Sources */,
 				3526EBCD1F422B9E00186CF1 /* mainSpotLight.cpp in Sources */,
 				84A0F85E1F72F6DC007361A6 /* mainInstancing3.cpp in Sources */,
