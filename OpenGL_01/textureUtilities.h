@@ -13,7 +13,7 @@
 
 // utility function for loading a 2D texture from file
 // ---------------------------------------------------
-unsigned int loadTexture(char const * path, GLenum textureMode = GL_REPEAT)
+unsigned int loadTexture(char const * path, bool withGammaCorrection, GLenum textureMode = GL_REPEAT)
 {
     unsigned int textureID;
     glGenTextures(1, &textureID);
@@ -22,16 +22,25 @@ unsigned int loadTexture(char const * path, GLenum textureMode = GL_REPEAT)
     unsigned char *data = SOIL_load_image(path, &width, &height, &nrComponents, 0);
     if (data)
     {
-        GLenum format;
+        GLenum internalFormat;
+        GLenum dataFormat;
         if (nrComponents == 1)
-            format = GL_RED;
+        {
+            internalFormat = dataFormat = GL_RED;
+        }
         else if (nrComponents == 3)
-            format = GL_RGB;
+        {
+            internalFormat = withGammaCorrection ? GL_SRGB : GL_RGB;
+            dataFormat = GL_RGB;
+        }
         else if (nrComponents == 4)
-            format = GL_RGBA;
+        {
+            internalFormat = withGammaCorrection ? GL_SRGB : GL_RGB;
+            dataFormat = GL_RGB;
+        }
         
         glBindTexture(GL_TEXTURE_2D, textureID);
-        glTexImage2D(GL_TEXTURE_2D, 0, format, width, height, 0, format, GL_UNSIGNED_BYTE, data);
+        glTexImage2D(GL_TEXTURE_2D, 0, internalFormat, width, height, 0, dataFormat, GL_UNSIGNED_BYTE, data);
         glGenerateMipmap(GL_TEXTURE_2D);
         
         glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, textureMode);
@@ -62,16 +71,25 @@ unsigned int textureFromFile(const char *path, const std::string &directory, boo
     unsigned char *data = SOIL_load_image(filename.c_str(), &width, &height, &nrComponents, 0);
     if (data)
     {
-        GLenum format;
+        GLenum internalFormat;
+        GLenum dataFormat;
         if (nrComponents == 1)
-            format = GL_RED;
+        {
+            internalFormat = dataFormat = GL_RED;
+        }
         else if (nrComponents == 3)
-            format = GL_RGB;
+        {
+            internalFormat = gamma ? GL_SRGB : GL_RGB;
+            dataFormat = GL_RGB;
+        }
         else if (nrComponents == 4)
-            format = GL_RGBA;
+        {
+            internalFormat = gamma ? GL_SRGB : GL_RGB;
+            dataFormat = GL_RGB;
+        }
         
         glBindTexture(GL_TEXTURE_2D, textureID);
-        glTexImage2D(GL_TEXTURE_2D, 0, format, width, height, 0, format, GL_UNSIGNED_BYTE, data);
+        glTexImage2D(GL_TEXTURE_2D, 0, internalFormat, width, height, 0, dataFormat, GL_UNSIGNED_BYTE, data);
         glGenerateMipmap(GL_TEXTURE_2D);
         
         glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, textureMode);

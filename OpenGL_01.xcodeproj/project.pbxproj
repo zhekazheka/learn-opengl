@@ -27,6 +27,7 @@
 		8402BC871F7AD0AC00D97CB6 /* mainAntiAliasing.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8402BC861F7AD0AC00D97CB6 /* mainAntiAliasing.cpp */; };
 		8402BC8B1F7AD6E400D97CB6 /* mainAntiAliasing2.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8402BC8A1F7AD6E400D97CB6 /* mainAntiAliasing2.cpp */; };
 		8402BC8E1F7C24E100D97CB6 /* mainBlinnPhong.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8402BC8D1F7C24E100D97CB6 /* mainBlinnPhong.cpp */; };
+		8402BC941F7C2FC600D97CB6 /* mainGammaCorrection.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8402BC931F7C2FC600D97CB6 /* mainGammaCorrection.cpp */; };
 		84845B081F1D40260073978C /* libSOIL.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 84845AF01F1D40130073978C /* libSOIL.a */; };
 		84845B1B1F1D44DF0073978C /* image_DXT.c in Sources */ = {isa = PBXBuildFile; fileRef = 84845B121F1D44DF0073978C /* image_DXT.c */; };
 		84845B1C1F1D44DF0073978C /* image_helper.c in Sources */ = {isa = PBXBuildFile; fileRef = 84845B141F1D44DF0073978C /* image_helper.c */; };
@@ -467,6 +468,9 @@
 		8402BC8D1F7C24E100D97CB6 /* mainBlinnPhong.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = mainBlinnPhong.cpp; sourceTree = "<group>"; };
 		8402BC911F7C287000D97CB6 /* BlinnPhong.frag */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = BlinnPhong.frag; sourceTree = "<group>"; };
 		8402BC921F7C287000D97CB6 /* BlinnPhong.vert */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = BlinnPhong.vert; sourceTree = "<group>"; };
+		8402BC931F7C2FC600D97CB6 /* mainGammaCorrection.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = mainGammaCorrection.cpp; sourceTree = "<group>"; };
+		8402BC991F7C399400D97CB6 /* GammaCorrection.frag */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = GammaCorrection.frag; sourceTree = "<group>"; };
+		8402BC9A1F7C399400D97CB6 /* GammaCorrection.vert */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = GammaCorrection.vert; sourceTree = "<group>"; };
 		84845AF01F1D40130073978C /* libSOIL.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libSOIL.a; sourceTree = "<group>"; };
 		84845AFA1F1D40130073978C /* SOIL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SOIL.h; sourceTree = "<group>"; };
 		84845B121F1D44DF0073978C /* image_DXT.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = image_DXT.c; sourceTree = "<group>"; };
@@ -688,6 +692,7 @@
 				8402BC861F7AD0AC00D97CB6 /* mainAntiAliasing.cpp */,
 				8402BC8A1F7AD6E400D97CB6 /* mainAntiAliasing2.cpp */,
 				8402BC8D1F7C24E100D97CB6 /* mainBlinnPhong.cpp */,
+				8402BC931F7C2FC600D97CB6 /* mainGammaCorrection.cpp */,
 				354418C01EA8093B0094EB72 /* shader-loader.h */,
 				35CD1AE71EC66E94001AC9D2 /* camera.h */,
 				35F58DD41F58BBE30094854C /* data.h */,
@@ -1267,6 +1272,7 @@
 		8402BC8F1F7C287000D97CB6 /* AdvanceLighting */ = {
 			isa = PBXGroup;
 			children = (
+				8402BC981F7C399400D97CB6 /* 02 */,
 				8402BC901F7C287000D97CB6 /* 01 */,
 			);
 			name = AdvanceLighting;
@@ -1280,6 +1286,15 @@
 				8402BC921F7C287000D97CB6 /* BlinnPhong.vert */,
 			);
 			path = 01;
+			sourceTree = "<group>";
+		};
+		8402BC981F7C399400D97CB6 /* 02 */ = {
+			isa = PBXGroup;
+			children = (
+				8402BC991F7C399400D97CB6 /* GammaCorrection.frag */,
+				8402BC9A1F7C399400D97CB6 /* GammaCorrection.vert */,
+			);
+			path = 02;
 			sourceTree = "<group>";
 		};
 		84845AED1F1D40130073978C /* Libraries */ = {
@@ -1485,6 +1500,7 @@
 				84C70B741F608D95006FF65D /* mainFramebuffers.cpp in Sources */,
 				84A0F8621F72FAED007361A6 /* mainInstancing4.cpp in Sources */,
 				84845B1B1F1D44DF0073978C /* image_DXT.c in Sources */,
+				8402BC941F7C2FC600D97CB6 /* mainGammaCorrection.cpp in Sources */,
 				84A0F8451F71A78B007361A6 /* mainGeometryShader2.cpp in Sources */,
 				84BB90961F7067C100D0A447 /* mainGLSL.cpp in Sources */,
 				84A0F84C1F72EFA0007361A6 /* mainInstancing.cpp in Sources */,
